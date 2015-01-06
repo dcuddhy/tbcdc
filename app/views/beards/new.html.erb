@@ -1,0 +1,16 @@
+    <div class="page-header">
+        <h2>New Beard!</h2>
+      </div>
+      <br><br><br>
+
+      <%= form_for @beard do |f| %>
+
+        <%= f.label :length %>
+        <%= f.text_field :length %>
+
+        <%= f.label :rating %>
+        <%= f.text_field :rating %>
+                
+      <%= f.submit %>
+
+      <% end %>

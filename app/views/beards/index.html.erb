@@ -1,0 +1,22 @@
+  <div class= "page-header">
+    <div class= "pull-right">
+    <%= link_to "Add a Beard", new_beard_path, class:"btn btn-info" %>
+    </div>
+    <h2>Beards</h2>
+  </div>
+
+  <br><br><br>
+
+  <%= link_to "Add a Beard", new_beard_path %>
+
+  <table>
+    <% @beards.each do |beard| %>
+      <tr>
+        <td><%= beard.length %></td>
+        <td><%= beard.rating %></td>
+        <td><%= link_to "Edit", edit_beard_path(beard) %><td>
+        <td><%= link_to "Delete", beard, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+
+    <% end %>
+  </table>
