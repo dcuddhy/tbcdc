@@ -1,20 +1,18 @@
 <div class="col-sm-8 blog-main">
 
 
+  <%= @feed.links %><br>
+  <%= @feed.title %><br>
+  <%= @feed.url %><br>
+
+  <% @feed.entries.each do |entry| %>
 
 
+  <h3><%= link_to entry.title, entry.url, target: "_blank" %></h3>
+  by: <%= entry.author %> on <%= entry.published %><br>
+  <%= entry.content %><br><br>
+  <%= entry.url %><br>
 
-
-  <% @feeds.each do |feed| %>
-    <% feed.entries.sort_by{|entry| entry.published.utc }.reverse.each do |entry| %>
-      <h3><%= link_to entry.title, entry.url, target: "_blank" %></h3>
-      by: <%= entry.author %> on <%= entry.published %><br>
-      <% if entry.content %>
-        <%= entry.content.html_safe %><br><br>
-      <% else %>
-        <%= entry.summary.html_safe %>
-      <% end %>
-    <% end %>
   <% end %>
 
 
