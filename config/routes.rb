@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
   root "pages#index"
+  get "/about" => "pages#about", as: :about
+  get "/blog" => "pages#blog", as: :blog
+  get "/links" => "pages#links", as: :links
+  get "/wob" => "pages#wob", as: :wob
+
+
 
   resources :beards
 

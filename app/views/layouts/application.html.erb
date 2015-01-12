@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= favicon_link_tag ('favicon.ico') %>
 
-  <title>
-    <%= content_for(:title) || "tbcdc" %>
-  </title>
+    <title>
+      <%= content_for(:title) || "tbcdc" %>
+    </title>
 
-  <%= csrf_meta_tags %>
-  <%= javascript_include_tag 'application' %>
-  <%= stylesheet_link_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+    
+  </head>
 
-</head>
+
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+
+      <% if current_page?('/') %>
+        <a class="blog-nav-item active" href="/">Home</a>
+      <% else %>
+        <a class="blog-nav-item" href="/">Home</a>
+      <% end %>
+
+      <% if current_page?('/about') %>
+        <a class="blog-nav-item active" href="about">About</a>
+      <% else %>
+        <a class="blog-nav-item" href="about">About</a>
+      <% end %>
+
+      <% if current_page?('/blog') %>
+        <a class="blog-nav-item active" href="blog">Blog</a>
+      <% else %>
+        <a class="blog-nav-item" href="blog">Blog</a>
+      <% end %>
+
+      <% if current_page?('/wob') %>
+        <a class="blog-nav-item active" href="wob">Wall of Beard</a>
+      <% else %>
+        <a class="blog-nav-item" href="wob">Wall of Beard</a>
+      <% end %>
+
+      <% if current_page?('/links') %>
+        <a class="blog-nav-item active" href="links">Links</a>
+      <% else %>
+        <a class="blog-nav-item" href="links">Links</a>
+      <% end %>
+
+    </nav>
+  </div>
+</div>
+
+
 
 <body>
-
-  <div class="blog-masthead">
-    <div class="container">
-      <nav class="blog-nav">
-        <a class="blog-nav-item active" href="#">Home</a>
-        <a class="blog-nav-item" href="#">About</a>
-        <a class="blog-nav-item" href="#">Blog</a>
-        <a class="blog-nav-item" href="#">Wall of Beard</a>
-        <a class="blog-nav-item" href="#">Links</a>
-      </nav>
-    </div>
-  </div>
 
   <div class="container">
 
