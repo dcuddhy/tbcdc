@@ -3,18 +3,31 @@ class PagesController <ApplicationController
   def index
 
     @feeds = []
-    @feeds << Feedjira::Feed.fetch_and_parse('http://atlantamustache.com/feed/')
-    @feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/WorldBeardAndMustacheChampionships')
-    @feeds << Feedjira::Feed.fetch_and_parse('http://beardcoach.com/feed/')
-    @feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/TheJacksonvilleBeardsmithSociety')
+    @feeds << Feedjira::Feed.fetch_and_parse('https://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
 
-    entries = []
-    @feeds.each do |feed|
-      entries << feed.entries
+    # @feeds << Feedjira::Feed.fetch_and_parse('http://atlantamustache.com/feed/')
+    # @feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/WorldBeardAndMustacheChampionships')
+    # @feeds << Feedjira::Feed.fetch_and_parse('http://beardcoach.com/feed/')
+    # @feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/TheJacksonvilleBeardsmithSociety')
+    #
+    # entries = []
+    # @feeds.each do |feed|
+    #   entries << feed.entries
+    # end
+
+    @entries = Article.order('published_at desc')
+
+    @foo = []
+    @entries.each do |entry|
+      @foo << entry.response
     end
-    entries.flatten!
-    @entries = entries.sort_by{|entry| entry.published.utc}.reverse
 
+    #
+    # entries.flatten!
+    # @entries = entries.sort_by{|entry| entry.published.utc}.reverse
+
+
+#schedule rake tasks - heroku scheduler
 
 
 # Dead??
@@ -30,7 +43,29 @@ class PagesController <ApplicationController
     # @feeds << Feedjira::Feed.fetch_and_parse('http://m4kottawa.org/feed/') ## NILS atlanta mustache
     #
 
+
+
   end
+
+
+def wob
+  @wob =[]
+  @wob << Feedjira::Feed.fetch_and_parse('https://api.instagram.com/v1/media/popular?client_id=30a5aa19e0a2474b902dfe674681c669')
+
+
+  @flickr = []
+  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=beard&lang=en-us&format=rss_200')
+  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=mustache&lang=en-us&format=rss_200')
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=moustache&lang=en-us&format=rss_200')
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=goatee&lang=en-us&format=rss_200')
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=facialhair&lang=en-us&format=rss_200')
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=soulpatch&lang=en-us&format=rss_200')
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=sideburns&lang=en-us&format=rss_200')
+end
+
+
+
+
 
   #GOOGLE THIS SHIT
   #permanence / temp ~ when to use bangs

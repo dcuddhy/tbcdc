@@ -1,7 +1,53 @@
-<br><br><br><br>
 WOB
-  <% if current_page?('/wob') %>
-    this is awesome
-  <% else %>
-    this is not awesome
-  <% end %>
+<br><br><br><br>
+
+
+<% @flickr.each do |photo| %>
+<h3>
+  <%= link_to photo.title, photo.url, target: "_blank" %>
+  <!-- <%= photo.entries %> -->
+  <%= photo.title %>
+</h3>
+<% end %>
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+instagram
+
+
+<%= @wob %> INSTANCE VARIABLE
+
+<%= @wob %>
+
+  <br><br><br><br><br><br>
+
+  CLIENT ID	30a5aa19e0a2474b902dfe674681c669
+  CLIENT SECRET	767b36e92d08450e8b011e64aeceb8fc
+  WEBSITE URL	http://www.thebeardclub.com
+  REDIRECT URI	http://www.thebeardclub.com
+
+
+  <br><br><br><br><br><br>
+
+
+  /tags/tag-name/media/recent
+
+  https://api.instagram.com/v1/tags/awesomeevent/media/recent?access_token=ACCESS-TOKEN
+
+  <br><br><br><br><br><br>
+api link to popular posts with my client id to access
+  https://api.instagram.com/v1/media/popular?client_id=30a5aa19e0a2474b902dfe674681c669
+
+<br><br>
+authorization link
+  https://instagram.com/oauth/authorize/?client_id=30a5aa19e0a2474b902dfe674681c669&redirect_uri=http://www.thebeardclub.com&response_type=code
+
+<br><br>
+code
+  28709c6dd30748da9c5b6f006b6b3141
+  *taken from redirect http://www.thebeardclub.com/index.php?code=28709c6dd30748da9c5b6f006b6b3141
+<br><br>
