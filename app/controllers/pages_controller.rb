@@ -17,9 +17,9 @@ class PagesController <ApplicationController
 
     @entries = Article.order('published_at desc')
 
-    @foo = []
+    @blogs = []
     @entries.each do |entry|
-      @foo << entry.response
+      @blogs << entry.response
     end
 
     #

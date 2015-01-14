@@ -7,7 +7,6 @@ namespace :articles do
     feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/WorldBeardAndMustacheChampionships')
     feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/TheJacksonvilleBeardsmithSociety')
     feeds << Feedjira::Feed.fetch_and_parse('http://beardcoach.com/feed/')
-    feeds << Feedjira::Feed.fetch_and_parse('http://www.reddit.com/r/beards/.rss')
 
 
     Article.delete_all

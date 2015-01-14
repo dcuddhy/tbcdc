@@ -1,57 +1,25 @@
 <div class="col-sm-8 blog-main">
 
-  <% @foo.each do |bar| %>
-    <h2><%= link_to bar["title"], bar["url"], target: "_blank" %></h2>
-    by <%= bar["author"] %> on <%= Date.parse(bar["published"]).strftime("%b %d, %Y") %>
-    <% if bar["content"] %>
-      <%= bar["content"][0 .. 1600].html_safe %>
-      <!-- <%= truncate(bar["content"], length: 1600, separator: ' ').html_safe %> -->
-
-      <% if bar["content"].length >= 1600 %>
+  <% @blogs.each do |blog| %>
+    <h2><%= link_to blog["title"], blog["url"], target: "_blank" %></h2>
+    by <%= blog["author"] %> on <%= Date.parse(blog["published"]).strftime("%b %d, %Y") %>
+    <% if blog["content"] %>
+      <%= blog["content"][0 .. 1600].html_safe %>
+      <!-- <%= truncate(blog["content"], length: 1600, separator: ' ').html_safe %> -->
+      <% if blog["content"].length >= 1600 %>
         ...<br>
-        <%= link_to "Read More!", bar["url"], target: "_blank" %>
+        <%= link_to "Read More!", blog["url"], target: "_blank" %>
       <% end %>
     <% else %>
-      <%= bar["summary"][0 .. 1600].html_safe %>
-      <% if bar["summary"].length >= 1600 %>
+      <%= blog["summary"][0 .. 1600].html_safe %>
+      <% if blog["summary"].length >= 1600 %>
         ...<br>
-        <%= link_to "Read More!", bar["url"], target: "_blank" %>
+        <%= link_to "Read More!", blog["url"], target: "_blank" %>
       <% end %>
     <% end %><br><br>
   <% end %>
 
-
-
-
-
   <br><br><br><br>
-  <!-- <% @entries.each do |entry| %>
-  <%= entry.published_at %><br>
-  <%= entry.article_id %><br>
-  <%= entry.id %><br>
-  <%= entry.response %>
-  <% end %> -->
-
-  <!-- entry.id -->
-  <!-- entry.response -->
-  <!-- entry.published_at -->
-  <!-- entry.article_id -->
-
-
-
-  <!-- #use separator: ' ' to truncate on space and not mid word -->
-
-
-  <!-- @entries
-  @author
-  @content
-  @entry_id
-  @links
-  @published
-  @title
-  @updated
-  @url -->
-
 
   <nav>
     <ul class="pager">
@@ -63,12 +31,12 @@
 
 </div><!-- /.blog-main -->
 
-<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-  <div class="sidebar-module sidebar-module-inset">
+<div class="col-sm-3 col-sm-offset-1 blog-sideblog">
+  <div class="sideblog-module sideblog-module-inset">
     <h4>About</h4>
     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
   </div>
-  <div class="sidebar-module">
+  <div class="sideblog-module">
     <h4>Archives</h4>
     <ol class="list-unstyled">
       <li><a href="#">March 2014</a></li>
@@ -85,7 +53,7 @@
       <li><a href="#">April 2013</a></li>
     </ol>
   </div>
-  <div class="sidebar-module">
+  <div class="sideblog-module">
     <h4>Elsewhere</h4>
     <ol class="list-unstyled">
       <li><a href="#">GitHub</a></li>
@@ -93,4 +61,4 @@
       <li><a href="#">Facebook</a></li>
     </ol>
   </div>
-</div><!-- /.blog-sidebar -->
+</div><!-- /.blog-sideblog -->
