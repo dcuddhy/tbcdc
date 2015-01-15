@@ -1,14 +1,39 @@
 WOB
 <br><br><br><br>
 
+<% @flickr %>
+
+
 
 <% @flickr.each do |photo| %>
 <h3>
   <%= link_to photo.title, photo.url, target: "_blank" %>
-  <!-- <%= photo.entries %> -->
-  <%= photo.title %>
 </h3>
+
+
+
+
+
+INSTANCE VARIABLES <%= photo.pretty_print_instance_variables %><br>
+FEED URL <%= photo.feed_url %><br>
+VERSION <%= photo.version %><br>
+URL <%= photo.url %><br>
+TITLE <%= photo.title %><br>
+ETAG <%= photo.etag %><br>
+LAST MODIFIED <%= photo.last_modified %><br>
+METHODS <%= photo.methods %><br><br><br>
+
+<%= photo.entries.to_s %><br>
+
+<%= photo.entries.to_s.html_safe %><br>
+
+
+
+<% link_to photo.title, photo.url, target: "_blank" %>
+<% Hash[photo.entries.each_with_index.map { |value, index| [index, value] }] %>
+<% photo.entries %>
 <% end %>
+
 
 
 

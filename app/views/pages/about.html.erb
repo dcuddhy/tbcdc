@@ -1,96 +1,70 @@
 <div class="col-sm-8 blog-main">
   <div class="blog-post">
+
+
+
+
+    <h3>who we are</h3>
+
+    <p>We like facial hair.  More importantly, we don’t think beards and moustaches
+    are just a fad.  Beards are natural.  People have been hairy for thousands
+    of years.  We have a hunch that people will continue to be hairy for many
+    years to come.</p>
+
+    <p>Our aim is to foster creativity and good nature to better our communities.
+    The Beard Club wants to bring like-minded people together and celebrate our
+    fondness of facial hair, a vehicle of self-expression, confidence, function
+    and charm.</p>
+
+    <br>
+
+    <h3>what we do</h3>
+
+    There is a big fuzzy universe out there, and we’d like to make it a little
+    more accessible.  We’re feeding from and linking to a huge collection of
+    great websites.<br><br>
+
+    Most of the content on this site is coming from other sites.  We always
+    credit the original author and link back to the original post.  Please be
+    aware that we set a character limit on each post, meaning that if you’d like
+    to read full articles, you need to go to the source.  It is always a good
+    idea to visit the original site.<br><br>
+
+    We offer some sweet merchandise.  We want to make you smile.  We also want
+    to cover costs.  Any surplus generally gets dumped back into the project or
+    donated to charity.<br><br>
+
+    In 2009, we sponsored runners raising funds for The Arthritis Foundation and
+     The Leukemia & Lymphoma Society.<br><br>
+
+    In 2010, we sponsored a very special young man who walked to raise funds for
+     The Down Syndrome Association of Middle Tennessee.<br><br>
+
+    <br>
+
+    <h3>how you can help</h3>
+
+    <em>Some quick easy ways to show your support:</em><br>
+
+    Grow a beard or moustache.<br>
+    Upload an image to the Wall of Beard.<br>
+    Send us links to beard-centric sites we may have missed.<br>
+    Visit our friends’ sites.<br>
+    Buy merchandise.<br>
+    Tell your friends.<br>
+
+<br>
+
+    info@thebeardclub.com
+
+<br><br>
+
+
+
+
+
     <h2 class="blog-post-title">Drew's Blog Post</h2>
     <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-
-    <% @entries.each do |entry| %>
-    <h3>
-    <%= link_to entry.title, entry.url, target: "_blank" %>
-  </h3>
-  by: <%= entry.author %> on <%= entry.published.strftime("%b %d, %Y") %><br>
-  <% if entry.content %>
-  <%= entry.content[0 .. 1600].html_safe %>
-  <% if entry.content.length >= 1600 %>
-  ...<br>
-  <%= link_to "Read More!", entry.url, target: "_blank" %><br><br>
-  <% end %>
-  <% else %>
-  <%= entry.content[0 .. 1600].html_safe %>
-  <% if entry.content.length >= 1600 %>
-  ...<br>
-  <%= link_to "Read More!", entry.url, target: "_blank" %><br><br>
-  <% end %>
-  <% end %>
-  <% end %>
-
-
-
-    <!-- <% @entries.each do |entry| %>
-    <h3>
-      <%= link_to entry.title, entry.url, target: "_blank" %>
-    </h3>
-    by: <%= entry.author %> on <%= entry.published.strftime("%b %d, %Y") %><br>
-    <% if entry.content %>
-    <%= entry.content[0 .. 1600].html_safe %>
-    <% if entry.content.length >= 1600 %>
-    ...<br>
-    <%= link_to "Read More!", entry.url, target: "_blank" %><br><br>
-    <% end %>
-    <% else %>
-    <%= entry.content[0 .. 1600].html_safe %>
-    <% if entry.content.length >= 1600 %>
-    ...<br>
-    <%= link_to "Read More!", entry.url, target: "_blank" %><br><br>
-    <% end %>
-    <% end %>
-    <% end %> -->
-
-
-
-
-
-
-    <!-- <%= @bab %> Build a beard 403 error -->
-
-    <!-- <% @entries.each do |entry| %>
-    <h3><%= link_to entry.title, entry.url, target: "_blank" %></h3>
-    by: <%= entry.author %> on <%= entry.published.strftime("%b %d, %Y") %><br>
-    <% if entry.content %>
-    <%= entry.content.html_safe %><br><br>
-    <% else %>
-    <%= entry.summary.html_safe %>
-    <% end %>
-    <% end %> -->
-
-
-
-
-
-
-    <!-- <% @entries.each do |entry| %>
-    <h3>
-      <%= link_to entry.title, entry.url, target: "_blank" %>
-    </h3>
-    by: <%= entry.author %> on <%= entry.published.strftime("%b %d, %Y") %><br>
-    <% if entry.content %>
-    <%= entry.content[0 .. 1500].html_safe %>
-    <% if entry.content.length >= 1500 %>
-    ...<br>
-    <%= link_to "Read More!", entry.url, target: "_blank" %><br><br>
-    <% end %>
-    <% else %>
-    <%= entry.content[0 .. 1500].html_safe %>
-    <% if entry.content.length >= 1500 %>
-    ...<br>
-    <%= link_to "Read More!", entry.url, target: "_blank" %><br><br>
-    <% end %>
-    <% end %>
-    <% end %> -->
-
-
-
-
 
     <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
     <hr>

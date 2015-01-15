@@ -15,6 +15,9 @@ class PagesController <ApplicationController
     #   entries << feed.entries
     # end
 
+
+
+
     @entries = Article.order('published_at desc')
 
     @blogs = []
@@ -55,7 +58,7 @@ def wob
 
   @flickr = []
   @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=beard&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=mustache&lang=en-us&format=rss_200')
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=mustache&lang=en-us&format=rss_200')
   # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=moustache&lang=en-us&format=rss_200')
   # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=goatee&lang=en-us&format=rss_200')
   # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=facialhair&lang=en-us&format=rss_200')
@@ -63,7 +66,10 @@ def wob
   # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=sideburns&lang=en-us&format=rss_200')
 end
 
-
+  # entries = []
+  # @flickr.each do |feed|
+  #   entries << feed.entries
+  # end
 
 
 
@@ -73,6 +79,15 @@ end
     #QUESTIONS:
     #Why does Engadget break my titlecase?
     #How do I look back at a commit to compare what I have/had?
+  def facebook
+    @facebook = []
+    @facebook << Feedjira::Feed.fetch_and_parse('http://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
+  end
+
+  # entries = []
+  # @feeds.each do |feed|
+  #   entries << feed.entries
+  # end
 
 
   def new

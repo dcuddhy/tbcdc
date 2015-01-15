@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "/blog" => "pages#blog", as: :blog
   get "/links" => "pages#links", as: :links
   get "/wob" => "pages#wob", as: :wob
+  get "/videos" => "pages#videos", as: :videos
+  get "/facebook" => "pages#facebook", as: :facebook
+
 
 
 

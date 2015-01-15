@@ -1,0 +1,22 @@
+
+<br><br><br><br>
+
+<!-- <%= @facebook %> -->
+<br><br><br><br>
+
+
+<br><br><br><br>
+<% @facebook.each do |fb| %>
+FB.TITLE  <%= fb.title %><br>
+FB.LAST_MODIFIED  <%= fb.last_modified %><br>
+FB.DESCRIPTION  <%= fb.description %><br>
+FB.URL  <%= fb.url %><br><br><br>
+  <%= fb.entries.each do |sm| %>
+<%= sm.summary.to_s.html_safe %>
+  <br><br><br>
+
+  <% end %>
+  <%= fb.methods %><br>
+<% end %>
+
+<!-- <%= @facebook.entries %> -->

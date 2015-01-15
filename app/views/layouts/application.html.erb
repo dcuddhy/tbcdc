@@ -53,6 +53,18 @@
         <a class="blog-nav-item" href="links">Links</a>
       <% end %>
 
+      <% if current_page?('/videos') %>
+        <a class="blog-nav-item active" href="videos">Links</a>
+      <% else %>
+        <a class="blog-nav-item" href="videos">Videos</a>
+      <% end %>
+
+      <% if current_page?('/facebook') %>
+        <a class="blog-nav-item active" href="facebook">Facebook</a>
+      <% else %>
+        <a class="blog-nav-item" href="facebook">Facebook</a>
+      <% end %>
+
     </nav>
   </div>
 </div>
