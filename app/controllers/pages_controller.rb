@@ -2,8 +2,8 @@ class PagesController <ApplicationController
 
   def index
 
-    @feeds = []
-    @feeds << Feedjira::Feed.fetch_and_parse('https://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
+    # @feeds = []
+    # @feeds << Feedjira::Feed.fetch_and_parse('https://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
 
     # @feeds << Feedjira::Feed.fetch_and_parse('http://atlantamustache.com/feed/')
     # @feeds << Feedjira::Feed.fetch_and_parse('http://feeds.feedburner.com/WorldBeardAndMustacheChampionships')
@@ -25,7 +25,7 @@ class PagesController <ApplicationController
       @blogs << entry.response
     end
 
-    #
+
     # entries.flatten!
     # @entries = entries.sort_by{|entry| entry.published.utc}.reverse
 
@@ -45,7 +45,10 @@ class PagesController <ApplicationController
     # @feeds << Feedjira::Feed.fetch_and_parse('http://facialhairhandbook.com/rss')
     # @feeds << Feedjira::Feed.fetch_and_parse('http://m4kottawa.org/feed/') ## NILS atlanta mustache
     #
-
+    def facebook
+      @facebook = []
+      @facebook << Feedjira::Feed.fetch_and_parse('http://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
+    end
 
 
   end
@@ -66,6 +69,7 @@ def wob
   # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=sideburns&lang=en-us&format=rss_200')
 end
 
+  # @flickr.flatten!
   # entries = []
   # @flickr.each do |feed|
   #   entries << feed.entries
@@ -73,12 +77,6 @@ end
 
 
 
-  #GOOGLE THIS SHIT
-  #permanence / temp ~ when to use bangs
-
-    #QUESTIONS:
-    #Why does Engadget break my titlecase?
-    #How do I look back at a commit to compare what I have/had?
   def facebook
     @facebook = []
     @facebook << Feedjira::Feed.fetch_and_parse('http://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
@@ -89,8 +87,18 @@ end
   #   entries << feed.entries
   # end
 
-
   def new
   end
 
 end
+
+
+
+
+
+#GOOGLE THIS SHIT
+#permanence / temp ~ when to use bangs
+
+#QUESTIONS:
+#Why does Engadget break my titlecase?
+#How do I look back at a commit to compare what I have/had?

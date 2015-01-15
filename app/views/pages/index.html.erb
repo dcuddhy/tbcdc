@@ -40,6 +40,21 @@
     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
   </div>
   <div class="sideblog-module">
+
+
+<!-- <%= @facebook.methods %> -->
+
+  <div class="fb">
+    <% @facebook.to_a.each do |fb| %>
+      <% fb.entries.each do |sm| %>
+        <h3><%= link_to sm.last_modified.strftime("%b %d, %Y"), sm.url, target: "_blank" %></h3><br>
+        <p><%= sm.summary.to_s.html_safe %></p><br><br>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
     <h4>Archives</h4>
     <ol class="list-unstyled">
       <li><a href="#">March 2014</a></li>

@@ -2,8 +2,31 @@
   display: block;
 }
 
-.feeds h2 {
+.fb p {
+  font-size: 10pt;
+}
 
+.fb h3{
+  margin: 0 0 -7px 0;
+  line-height: 0;
+}
+
+
+
+
+.flickr{
+  font-size: 0pt;
+}
+
+.flickr img {
+  margin: -5px -5px -5px -5px;
+  width-max: 120px;
+}
+
+.flickr .frame{
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
 }
 
 

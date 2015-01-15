@@ -1,22 +1,25 @@
+<div class="col-sm-3 blog-main">
 
-<br><br><br><br>
+  <!-- notice that i'm iterating through fb.entries and not fb as i would normally -->
+  <div class="fb">
 
-<!-- <%= @facebook %> -->
-<br><br><br><br>
-
-
-<br><br><br><br>
-<% @facebook.each do |fb| %>
-FB.TITLE  <%= fb.title %><br>
-FB.LAST_MODIFIED  <%= fb.last_modified %><br>
-FB.DESCRIPTION  <%= fb.description %><br>
-FB.URL  <%= fb.url %><br><br><br>
-  <%= fb.entries.each do |sm| %>
-<%= sm.summary.to_s.html_safe %>
-  <br><br><br>
-
+  <% @facebook.each do |fb| %>
+    <!-- FB.TITLE  <%= fb.title %><br>
+    FB.LAST_MODIFIED  <%= fb.last_modified %><br>
+    FB.DESCRIPTION  <%= fb.description %><br>
+    FB.URL  <%= fb.url %><br><br><br> -->
+    <% fb.entries.each do |sm| %>
+      <h3><%= link_to sm.last_modified.strftime("%b %d, %Y"), sm.url, target: "_blank" %></h3><br>
+      <p><%= sm.summary.to_s.html_safe %></p><br>
+      <!-- <%= sm.title %> By <%= sm.author %> <br> -->
+      <!-- <%= sm.entries[5][1] %><br> YOU CAN PICK ANY ELEMENT BY CALLING ARRAY THEN ARRAY AGAIN -->
+      <!-- <%= sm.summary %> -->
+      <br>
+    <% end %>
   <% end %>
-  <%= fb.methods %><br>
-<% end %>
 
-<!-- <%= @facebook.entries %> -->
+  </div>
+
+
+
+</div>
