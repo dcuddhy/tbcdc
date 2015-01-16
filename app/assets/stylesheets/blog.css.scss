@@ -16,17 +16,24 @@
 
 .flickr{
   font-size: 0pt;
+  margin: 0 auto 0 auto;
 }
 
 .flickr img {
-  margin: -5px -5px -5px -5px;
-  width-max: 120px;
+  margin: -30px -30px -30px -30px;
+  max-width: 200px;
+  height: auto;
+
 }
 
 .flickr .frame{
+  border: 5px solid white;
+  padding: 1px;
+  padding-color: black;
   width: 120px;
   height: 120px;
   overflow: hidden;
+  display: inline-block;
 }
 
 

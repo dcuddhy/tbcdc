@@ -1,43 +1,22 @@
 WOB
 <br><br><br><br>
 
-<% @flickr %>
 
-  <div class = "flickr">
-  <% @flickr.each do |photo| %>
-    <% photo.entries.each do |pic| %>
-    <div class = "frame">
-      <!-- <%= pic.entries[2][1] %> -->
-      <%= pic.entries[2][1].html_safe %>
-    </div>
-    <% end %>
-  <% end %>
-  </div>
-
-
-<!-- <% @flickr.each do |photo| %>
-<h3>
-  <%= link_to photo.title, photo.url, target: "_blank" %>
-</h3> -->
-
-<!-- INSTANCE VARIABLES <%= photo.pretty_print_instance_variables %><br>
-FEED URL <%= photo.feed_url %><br>
-VERSION <%= photo.version %><br>
-URL <%= photo.url %><br>
-TITLE <%= photo.title %><br>
-ETAG <%= photo.etag %><br>
-LAST MODIFIED <%= photo.last_modified %><br>
-METHODS <%= photo.methods %><br><br><br>
-
-<%= photo.entries.to_s %><br>
-
-<%= photo.entries.to_s.html_safe %><br> -->
+      <div class = "flickr text-center">
+        <% @flickr.each do |photo| %>
+        <% photo.entries.each do |pic| %>
+        <div class = "frame">
+          <!-- <%= pic.entries[2][1] %> -->
+          <%= pic.entries[2][1].to_s.html_safe %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
 
 
-<!-- <% link_to photo.title, photo.url, target: "_blank" %>
-<% Hash[photo.entries.each_with_index.map { |value, index| [index, value] }] %>
-<% photo.entries %>
-<% end %> -->
+
+
+
 
 
 

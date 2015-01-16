@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+// $(document).on("click", "a", function () {
+//   console.log(this.href);
+//   if (this.href.indexOf('0.0.0.0') == -1){
+//     this.target = "_blank";
+//   }
+//   return false;
+// });
