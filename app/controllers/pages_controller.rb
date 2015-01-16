@@ -94,9 +94,9 @@ end
   def new
   end
 
-  def video
-  @video = []
-  @video << Feedjira::Feed.fetch_and_parse('http://tbcdc.tumblr.com/rss')
+  def videos
+  @videos = []
+  @videos << Feedjira::Feed.fetch_and_parse('http://tbcdc.tumblr.com/rss')
 
   end
 

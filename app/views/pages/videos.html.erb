@@ -1,2 +1,19 @@
 <br><br><br><br><br>
-VIDEO via tumblr
+
+<div class="videos">
+
+  <% @videos.each do |video| %>
+  <% video.entries.each do |vid| %>
+  <h3><%= link_to vid.last_modified.strftime("%b %d, %Y"), vid.url, target: "_blank" %></h3><br>
+  <p><%= vid.summary.to_s.html_safe %></p><br>
+  <br>
+  <% end %>
+  <% end %>
+
+</div>
+
+
+<!-- you can add titles as caption when adding to tumblr
+you can call vid.title and vid.summary.to_s.html_safe
+use nokijiwa gem to remove text between <p> tags, effectively removing embedded titles
+results in title ABOVE video, and able to apply styling. -->
