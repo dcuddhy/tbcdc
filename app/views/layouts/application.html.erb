@@ -47,12 +47,6 @@
         <a class="blog-nav-item" href="wob">Wall of Beard</a>
       <% end %>
 
-      <% if current_page?('/links') %>
-        <a class="blog-nav-item active" href="links">Links</a>
-      <% else %>
-        <a class="blog-nav-item" href="links">Links</a>
-      <% end %>
-
       <% if current_page?('/videos') %>
         <a class="blog-nav-item active" href="videos">Videos</a>
       <% else %>
@@ -63,6 +57,12 @@
         <a class="blog-nav-item active" href="facebook">Facebook</a>
       <% else %>
         <a class="blog-nav-item" href="facebook">Facebook</a>
+      <% end %>
+
+      <% if current_page?('/admin') %>
+      <a class="blog-nav-item active" href="admin">Admin</a>
+      <% else %>
+      <a class="blog-nav-item" href="admin">Admin</a>
       <% end %>
 
     </nav>
