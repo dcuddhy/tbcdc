@@ -6,7 +6,15 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'feedjira'
 gem 'pry-rails'
-gem 'will_paginate', '~> 3.0.7'
+
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-tumblr'
+gem 'omniauth-instagram'
+gem 'omniauth-500px'
+gem 'omniauth-flickr'
+
 
 
 
