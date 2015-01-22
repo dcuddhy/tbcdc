@@ -7,16 +7,20 @@ gem 'autoprefixer-rails'
 gem 'feedjira'
 gem 'pry-rails'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'omniauth'
+gem 'omniauth-openid'
 gem 'omniauth-facebook'
 gem 'omniauth-tumblr'
 gem 'omniauth-instagram'
 gem 'omniauth-500px'
 gem 'omniauth-flickr'
+gem "koala", "~> 1.10.0rc" # Facebook API
+gem 'tumblr_client'
 
-
-
+#installed tumblr client on command line
+#installed oauth on command line
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

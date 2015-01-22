@@ -6,9 +6,22 @@ Rails.application.routes.draw do
   get "/admin" => "pages#admin", as: :admin
   get "/wob" => "pages#wob", as: :wob
   get "/videos" => "pages#videos", as: :videos
-  get "/facebook" => "pages#facebook", as: :facebook
+  get "/facebook" => "pages#facebook"
 
 
+
+
+
+  # Effort to connect facebook using omni-auth without koala
+  # get "/auth/:facebook/callback" => "sessions#create"
+
+# # # # #  # # # # # # #  # # # # # # #  # # # # # #  # # # #  # # #
+
+  # setting up kaola to work in tandem with omniauth
+  # from http://www.gotealeaf.com/blog/facebook-graph-api-using-omniauth-facebook-and-koala
+  # get 'auth/facebook', as: "auth_provider"
+  # get 'auth/facebook/callback', to: 'users#login'
+  # root to: 'users#index', via: :get
 
 
   resources :beards

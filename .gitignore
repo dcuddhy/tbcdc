@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#For Kaola to work in tandem with Omniauth
+#http://www.gotealeaf.com/blog/facebook-graph-api-using-omniauth-facebook-and-koala
+/config/facebook.yml
+
+.env
