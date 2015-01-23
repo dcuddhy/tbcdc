@@ -71,7 +71,11 @@ def wob
   @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/facialhair')
   @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/soulpatch')
   @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/sideburns')
-end
+
+
+
+
+
 
   # @flickr.flatten!
   # entries = []
@@ -79,6 +83,7 @@ end
   #   entries << feed.entries
   # end
 
+end
 
 
   def facebook
@@ -102,7 +107,15 @@ end
       :oauth_token_secret => ENV['TUMBLR_OAUTH_TOKEN_SECRET']
     })
 
-    @videos = client.dashboard( :limit => 100, :type => 'video', :reblog_info => true)
+    @videos = client.dashboard( :limit => 100, :type => 'video', :reblog_info => true )
+
+
+    @tumblr = []
+      @videos.each do |tvideo|
+        @tumblr <<tvideo.entries
+    end
+
+
   end
 
 end

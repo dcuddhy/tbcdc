@@ -1,13 +1,30 @@
-<%= @videos %>
+
+<iframe width="640" height="360" src=" https://www.youtube.com/embed/ZzBV5Tzf5BM " frameborder="0" allowfullscreen></iframe>
 
 
 <div class="videos">
+<% @videos.values.each do |video| %>
+  <% video.each do |vid| %>
+<iframe width="640" height="360" src="<%= vid.values[17] %>" frameborder="0" allowfullscreen></iframe>
+<br>
+<%= vid.values[17] %><br>
+<!-- <%= vid.values[25][2].values[1].to_s.html_safe %> -->
+
+<% end %>
+<% end %>
+
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/ZzBV5Tzf5BM?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 </div>
 
 
-<!-- you can add titles as caption when adding to tumblr
+
+
+
+<!-- SEE FACEBOOK2 for nokigiri example
+you can add titles as caption when adding to tumblr
 you can call vid.title and vid.summary.to_s.html_safe
 use nokijiwa gem to remove text between <p> tags, effectively removing embedded titles
 results in title ABOVE video, and able to apply styling. -->

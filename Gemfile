@@ -18,6 +18,7 @@ gem 'omniauth-500px'
 gem 'omniauth-flickr'
 gem "koala", "~> 1.10.0rc" # Facebook API
 gem 'tumblr_client'
+gem 'instagram'
 
 #installed tumblr client on command line
 #installed oauth on command line
