@@ -1,3 +1,11 @@
+require 'rss'
+require 'open-uri'
+require "net/https"
+require "uri"
+require 'json'
+
+
+
 class PagesController <ApplicationController
 
   def index
@@ -54,8 +62,8 @@ class PagesController <ApplicationController
 
 
 def wob
-  @wob =[]
-  @wob << Feedjira::Feed.fetch_and_parse('https://api.instagram.com/v1/media/popular?client_id=30a5aa19e0a2474b902dfe674681c669')
+  # @wob =[]
+  # @wob << Feedjira::Feed.fetch_and_parse('https://api.instagram.com/v1/media/popular?client_id=30a5aa19e0a2474b902dfe674681c669')
 
 
   @flickr = []
@@ -75,6 +83,32 @@ def wob
 
 
 
+
+uri = URI.parse("https://api.instagram.com/v1/tags/beard/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(uri.request_uri)
+
+response = http.request(request)
+
+@instagram = JSON.parse(response.body)
+
+
+
+
+    client = Instagram::Client.new({
+      :client_id => ENV['INSTAGRAM_CLIENT_ID'],
+      :client_secret => ENV['INSTAGRAM_CLIENT_SECRET'],
+      :access_token => ENV['INSTAGRAM_ACCESS_TOKEN'],
+    })
+
+# KENDRA NOISE
+#     url = 'https://api.instagram.com/v1/tags/beard/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80'
+#     open(url) do |rss|
+#       @foo = RSS::Parser.parse(rss)
+#     end
 
 
   # @flickr.flatten!

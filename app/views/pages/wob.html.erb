@@ -1,15 +1,17 @@
 WOB
 <br><br><br><br>
 
+below here <br>
+<%= @instagram.class %>
 
-<%= @instagram %>
 
-      <!-- <div class = "flickr text-center">
+<!--
+      <div class = "flickr text-center">
         <% @flickr.each do |photo| %>
         <% photo.entries.each do |pic| %>
         <div class = "frame"> -->
-          <!-- <%= pic.entries[2][1] %> -->
-          <!-- <%= pic.entries[2][1].to_s.html_safe %>
+          <!-- <%= pic.entries[2][1] %>
+          <%= pic.entries[2][1].to_s.html_safe %>
         </div>
         <% end %>
         <% end %>
@@ -28,6 +30,9 @@ WOB
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 instagram
+
+!!!!!!!!!!!!!!! THIS TRETURNS RESULTS!!!
+https://api.instagram.com/v1/tags/beard/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80
 
 
 <%= @wob %> INSTANCE VARIABLE
@@ -62,3 +67,14 @@ code
   28709c6dd30748da9c5b6f006b6b3141
   *taken from redirect http://www.thebeardclub.com/index.php?code=28709c6dd30748da9c5b6f006b6b3141
 <br><br>
+
+
+
+access token
+grabbed using method described here:
+http://jelled.com/instagram/access-token
+
+enter url, look for return ------
+https://instagram.com/oauth/authorize/?client_id=30a5aa19e0a2474b902dfe674681c669&redirect_uri=http://localhost&response_type=token
+
+  43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80
