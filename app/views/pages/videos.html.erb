@@ -1,14 +1,34 @@
 
-<iframe width="640" height="360" src=" https://www.youtube.com/embed/ZzBV5Tzf5BM " frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="640" height="360" src=" https://www.youtube.com/embed/ZzBV5Tzf5BM " frameborder="0" allowfullscreen></iframe> -->
+<!-- note that the code above is tagged 'embed' but the code on html is tagged 'watch?v='
+that's why shit isn't working.  the video ids are the same, so grab onl the id and adhere
+it to the embed code ala line 13 -->
+
+
+<!-- <iframe src="//player.vimeo.com/video/38991709" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/38991709">ANGRY BEARD</a> from <a href="http://vimeo.com/tkshfilms">TKSH Films</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
+
+
 
 <div class="videos">
 <% @videos.values.each do |video| %>
   <% video.each do |vid| %>
+
+<% if vid["source_url"].to_s.length > 31 %>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>" frameborder="0" allowfullscreen></iframe>
 <br>
-<%= vid["source_url"] %><br>
-<%= vid["source_url"].to_s[32..60] %><br>
-<!-- <%= vid["player"][2]["embed_code"] %> -->
+<% else %>
+<iframe src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ <!-- <p><a href="http://vimeo.com/<%= vid["source_url"][18..50] %>"> -->
+
+
+<!-- <%= vid["source_url"][18..50] %><br> -->
+
+
+ <!-- <%= vid["player"][2]["embed_code"].html_safe %> -->
+<% end %>
+<!--
+<%= vid["source_url"].to_s[32..60] %><br> -->
+
 
 <% end %>
 <% end %>
