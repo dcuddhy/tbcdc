@@ -62,9 +62,6 @@ class PagesController <ApplicationController
 
 
 def wob
-  # @wob =[]
-  # @wob << Feedjira::Feed.fetch_and_parse('https://api.instagram.com/v1/media/popular?client_id=30a5aa19e0a2474b902dfe674681c669')
-
 
   @flickr = []
   @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=beard&lang=en-us&format=rss_200')
@@ -79,9 +76,6 @@ def wob
   @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/facialhair')
   @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/soulpatch')
   @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/sideburns')
-
-
-
 
 
   uri = URI.parse("https://api.instagram.com/v1/tags/mustache/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80&count=25")
@@ -147,7 +141,6 @@ def wob
   request = Net::HTTP::Get.new(uri.request_uri)
   response = http.request(request)
   @instagram8 = JSON.parse(response.body)
-
 
   @megagram = []
 
