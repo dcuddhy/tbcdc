@@ -1,22 +1,28 @@
 WOB
 <br><br><br><br>
-
+this is functioning code for instagram, but it is finicky for some reason...
 below here <br>
-<%= @instagram.class %>
+THERE ARE FIXNUMS that are breaking my shit
+<br><br><br>
 
 
-<!--
-      <div class = "flickr text-center">
-        <% @flickr.each do |photo| %>
-        <% photo.entries.each do |pic| %>
-        <div class = "frame"> -->
-          <!-- <%= pic.entries[2][1] %>
-          <%= pic.entries[2][1].to_s.html_safe %>
-        </div>
-        <% end %>
-        <% end %>
-      </div> -->
 
+<div class = "flickr text-center">
+<% @megagram.each do |mega| %>
+  <% mega["data"].each do |m| %>
+<div class = "frame">
+    <img src="<%= m["images"]["low_resolution"]["url"] %>"><br>
+</div>
+  <% end %>
+<% end %>
+</div>
+
+
+
+
+
+
+<br><br><br><br><br><br><br>
 
 
 

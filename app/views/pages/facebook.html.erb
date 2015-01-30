@@ -1,5 +1,54 @@
 <div class="col-sm-3 blog-main">
 
+
+this is functioning code for instagram, but it is finicky for some reason...
+below here <br>
+<div class = "flickr text-center">
+<% @instagram.values.to_a[2].each do |insta| %>
+<div class = "frame">
+<img src="<%= insta.to_a[9][1].to_a[0][1].to_a[0][1] %>"><br>
+</div>
+<% end %>
+</div>
+
+<div class = "flickr text-center">
+<% @instagram2.values.to_a[2].each do |insta| %>
+<div class = "frame">
+<img src="<%= insta.to_a[9][1].to_a[0][1].to_a[0][1] %>"><br>
+</div>
+<% end %>
+</div>
+
+
+
+<% @megagram.each do |mega| %>
+<% mega.to_a[2][1].each do |m| %>
+<% jam = m.values[9]["low_resolution"] %><br><br>
+<%= jam %>
+<% end %>
+<% end %>
+
+
+
+
+<div class = "flickr text-center">
+<% @instagram["data"].each do |insta| %>
+<div class = "frame">
+<img src="<%= insta["images"]["low_resolution"]["url"] %>"><br>
+</div>
+<% end %>
+</div>
+
+<div class = "flickr text-center">
+<% @instagram2["data"].each do |insta| %>
+<div class = "frame">
+<img src="<%= insta["images"]["low_resolution"]["url"] %>"><br>
+</div>
+<% end %>
+</div>
+
+
+
   <!-- notice that i'm iterating through fb.entries and not fb as i would normally -->
   <div class="fb">
 

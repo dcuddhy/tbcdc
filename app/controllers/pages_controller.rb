@@ -84,16 +84,85 @@ def wob
 
 
 
-uri = URI.parse("https://api.instagram.com/v1/tags/beard/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80")
+uri = URI.parse("https://api.instagram.com/v1/tags/mustache/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80&count=25")
+run = (http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request))
+@instagram = JSON.parse(response.body)
+
+uri = URI.parse(@instagram["pagination"]["next_url"])
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
 request = Net::HTTP::Get.new(uri.request_uri)
-
 response = http.request(request)
+@instagram2 = JSON.parse(response.body)
 
-@instagram = JSON.parse(response.body)
+uri = URI.parse(@instagram2["pagination"]["next_url"])
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request)
+@instagram3 = JSON.parse(response.body)
+
+uri = URI.parse(@instagram3["pagination"]["next_url"])
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request)
+@instagram4 = JSON.parse(response.body)
+
+uri = URI.parse(@instagram4["pagination"]["next_url"])
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request)
+@instagram5 = JSON.parse(response.body)
+
+uri = URI.parse(@instagram5["pagination"]["next_url"])
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request)
+@instagram6 = JSON.parse(response.body)
+
+uri = URI.parse(@instagram6["pagination"]["next_url"])
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request)
+@instagram7 = JSON.parse(response.body)
+
+uri = URI.parse(@instagram7["pagination"]["next_url"])
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request)
+@instagram8 = JSON.parse(response.body)
+
+
+
+@megagram = []
+
+@megagram << @instagram
+@megagram << @instagram2
+@megagram << @instagram3
+@megagram << @instagram4
+@megagram << @instagram5
+@megagram << @instagram6
+@megagram << @instagram7
+@megagram << @instagram8
+
+
+
 
 
 
