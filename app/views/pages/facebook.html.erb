@@ -1,17 +1,23 @@
 
-  <% @facebook['data'].each do |fbook| %>
-    <% if fbook['message'] %>
-        <div class = "fb">
-          <%= fbook['from']['name'] %><br>
-          <% if fbook['picture'] %>
-            <center> <img src = "<%= fbook['picture'] %>"></center><br>
-            <center><%= fbook['caption'] %></center><br>
-          <% end %>
-          <%= fbook['message'] %><br>
-          <%= fbook['description'] %><br>
-          <!-- <%= fbook %> -->
-      </div>
+<div id="wrapper">
+	<div id="columns">
+
+    <% @facebook['data'].each do |fbook| %>
+      <% if fbook['message'] %>
+          <div class = "pin">
+            <%= fbook['from']['name'] %><br>
+            <% if fbook['picture'] %>
+              <center> <img src = "<%= fbook['picture'] %>"></center><br>
+              <center><%= fbook['caption'] %></center><br>
+            <% end %>
+            <%= fbook['message'] %><br>
+            <%= fbook['description'] %><br>
+            <!-- <%= fbook %> -->
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+
+  </div>
+</div>
 
 <!-- ###about to jump into 'picture' as string and delete 130x130 -->
