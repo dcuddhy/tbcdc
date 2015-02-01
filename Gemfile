@@ -6,6 +6,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'feedjira'
 gem 'pry-rails'
+gem 'oauth'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
@@ -19,6 +20,8 @@ gem 'omniauth-flickr'
 gem "koala", "~> 1.10.0rc" # Facebook API
 gem 'tumblr_client'
 gem 'instagram'
+gem 'fb_graph'
+
 
 #installed tumblr client on command line
 #installed oauth on command line

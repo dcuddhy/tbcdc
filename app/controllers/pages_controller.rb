@@ -4,6 +4,9 @@ require "net/https"
 require "uri"
 require 'json'
 
+require 'oauth'
+
+
 
 
 class PagesController <ApplicationController
@@ -23,9 +26,6 @@ class PagesController <ApplicationController
     #   entries << feed.entries
     # end
 
-
-
-
     @entries = Article.order('published_at desc')
 
     @blogs = []
@@ -35,6 +35,8 @@ class PagesController <ApplicationController
 
     # entries.flatten!
     # @entries = entries.sort_by{|entry| entry.published.utc}.reverse
+  end
+
 
 
 #schedule rake tasks - heroku scheduler
@@ -46,19 +48,26 @@ class PagesController <ApplicationController
     # @feeds << Feedjira::Feed.fetch_and_parse('http://www.m4kvancouver.org/feed/')
 
 
-#breaks site
-    # @bab = []
-    # @bab << Feedjira::Feed.fetch_and_parse('http://www.build-a-beard.com/bab/rss.xml')
-    # @feeds << Feedjira::Feed.fetch_and_parse('http://facialhairhandbook.com/rss')
-    # @feeds << Feedjira::Feed.fetch_and_parse('http://m4kottawa.org/feed/') ## NILS atlanta mustache
-    #
-    def facebook
-      @facebook = []
-      @facebook << Feedjira::Feed.fetch_and_parse('http://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
-    end
 
+
+  def facebook
+
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=100&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  uri = URI.parse(encoded_url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request = Net::HTTP::Get.new(uri.request_uri)
+  response = http.request(request)
+  @facebook = JSON.parse(response.body)
 
   end
+
+
+
+
+
 
 
 def wob
@@ -148,18 +157,13 @@ def wob
   @megagram << @instagram2
   @megagram << @instagram3
   @megagram << @instagram4
-  # @megagram << @instagram5
-  # @megagram << @instagram6
-  # @megagram << @instagram7
-  # @megagram << @instagram8
+  @megagram << @instagram5
+  @megagram << @instagram6
+  @megagram << @instagram7
+  @megagram << @instagram8
 
 end
 
-
-  def facebook
-    @facebook = []
-    @facebook << Feedjira::Feed.fetch_and_parse('http://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
-  end
 
   # entries = []
   # @feeds.each do |feed|

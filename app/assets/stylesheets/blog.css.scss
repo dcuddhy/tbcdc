@@ -1,5 +1,19 @@
-.feeds img {
+.feeds img, .fb img {
   display: block;
+  border: 3px solid white;
+}
+
+.fb-border{
+  border :1px solid #333;
+}
+
+.fb {
+  width: 250px;
+  display: inline;
+  overflow: hidden;
+  float: left;
+  background: #f7f7f7;
+  margin: 10px;
 }
 
 .fb p {
