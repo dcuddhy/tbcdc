@@ -226,15 +226,31 @@ flex-wrap: wrap;
 }
 
 .flickr .frame{
-  border: 5px solid white;
-  padding: 1px;
-  padding-color: black;
+  border: 5px solid #FEFEFE;
+  padding: 6px;
   width: 120px;
   height: 120px;
   overflow: hidden;
   display: inline-block;
+
 }
 
+.flickr .outer-frame{
+  margin: 5px;
+  overflow: hidden;
+  display: inline-block;
+	border: 2px solid #FAFAFA;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+}
+
+.flickr .frame:hover {
+  border: 5px solid white;
+}
+
+.flickr .outer-frame:hover {
+	border: 2px solid white;
+	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
+}
 
 .videos{
   width: 900px;
