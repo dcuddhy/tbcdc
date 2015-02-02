@@ -1,6 +1,7 @@
 
 
 
+
 <div id="wrapper">
 	<div id="columns">
 
@@ -10,6 +11,9 @@
           <div class = "pin">
             <h4><a href="https://www.facebook.com/<%= fbook['from']['id'] %>" target="_blank">
               <%= fbook['from']['name'] %></a></h4>
+              <div class = "date">
+                <%= fbook['created_time'].to_date.strftime("%b %d, %Y") %><br>
+              </div>
             <% if fbook['picture'] %>
               <center>
                 <a href="<%= fbook['link'] %>" target="_blank">
@@ -22,9 +26,7 @@
               <em><%= fbook['description'] %></em><br>
               </div>
             <% end %>
-            <% if fbook['message'] %>
               <%= fbook['message'] %><br>
-            <% end %>
         </div>
       <% end %>
     <% end %>
