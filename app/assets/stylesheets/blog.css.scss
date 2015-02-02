@@ -1,70 +1,3 @@
-.item { width: 25%; }
-.item.w2 { width: 50%; }
-
-
-.feeds img, .fb img {
-  display: block;
-  border: 3px solid white;
-}
-
-.fb-border{
-  border :1px solid #333;
-}
-
-.fb {
-  width: 250px;
-  display: inline;
-  overflow: hidden;
-  float: left;
-  background: #f7f7f7;
-  margin: 10px;
-clear: vertical;
-flex-wrap: wrap;
-}
-
-.fb p {
-  font-size: 10pt;
-}
-
-.fb h3{
-  margin: 0 0 -7px 0;
-  line-height: 0;
-}
-
-
-
-
-.flickr{
-  font-size: 0pt;
-  margin: 0 auto 0 auto;
-}
-
-.flickr img {
-  margin: -30px -30px -30px -30px;
-  max-width: 200px;
-  height: auto;
-
-}
-
-.flickr .frame{
-  border: 5px solid white;
-  padding: 1px;
-  padding-color: black;
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-  display: inline-block;
-}
-
-
-.videos{
-  width: 900px;
-}
-
-.video p{
-  width: 900px;
-  height: 600px;
-}
 
 
 /*
@@ -244,6 +177,84 @@ h6, .h6 {
 
 
 
+.item { width: 25%; }
+.item.w2 { width: 50%; }
+
+
+.feeds img, .fb img {
+  display: block;
+  border: 3px solid white;
+}
+
+.fb-border{
+  border :1px solid #333;
+}
+
+.fb {
+  width: 250px;
+  display: inline;
+  overflow: hidden;
+  float: left;
+  background: #f7f7f7;
+  margin: 10px;
+clear: vertical;
+flex-wrap: wrap;
+}
+
+.fb p {
+  font-size: 10pt;
+}
+
+.fb h3{
+  margin: 0 0 -7px 0;
+  line-height: 0;
+}
+
+
+
+
+.flickr{
+  font-size: 0pt;
+  margin: 0 auto 0 auto;
+}
+
+.flickr img {
+  margin: -30px -30px -30px -30px;
+  max-width: 200px;
+  height: auto;
+
+}
+
+.flickr .frame{
+  border: 5px solid white;
+  padding: 1px;
+  padding-color: black;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+
+.videos{
+  width: 900px;
+}
+
+.video p{
+  width: 900px;
+  height: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -255,6 +266,22 @@ from searching for pinterest style css */
 body {
 	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
 }
+
+.pin{
+  a:link, a:visited, a:active {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.pin{
+  a:hover {
+      color: black;
+      text-decoration: underline;
+  }
+}
+
+
 
 #wrapper {
 	width: 90%;
@@ -277,22 +304,37 @@ body {
 	column-break-inside: avoid;
 	padding: 15px;
 	padding-bottom: 5px;
-	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
 	transition: all .2s ease;
 }
 
-.pin img {
-	max-width: 80%;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
+.pin h4{
+  margin-top: -8px;
+  margin-bottom: 8px;
 }
 
-.pin p {
-	font: 12px/18px Arial, sans-serif;
-	color: #333;
-	margin: 0;
+.pin img {
+	max-width: 80%;
+  margin: 0 auto;
+	margin-bottom: 5px;
+  display: block;
+  border: 1px solid #eee;
+}
+
+.pin hr{
+  margin: 0;
+}
+
+.pin .caption {
+  text-align: center;
+  color: #333;
+  text-size: 0.2em;
+}
+
+.pin .description {
+  background: #f4f4f4;
+  color: #888;
+  margin-bottom: 5px;
 }
 
 @media (min-width: 300px) {

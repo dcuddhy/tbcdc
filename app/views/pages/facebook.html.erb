@@ -1,23 +1,87 @@
 
-<div id="wrapper">
-	<div id="columns">
 
-    <% @facebook['data'].each do |fbook| %>
-      <% if fbook['message'] %>
-          <div class = "pin">
-            <%= fbook['from']['name'] %><br>
-            <% if fbook['picture'] %>
-              <center> <img src = "<%= fbook['picture'] %>"></center><br>
-              <center><%= fbook['caption'] %></center><br>
-            <% end %>
-            <%= fbook['message'] %><br>
-            <%= fbook['description'] %><br>
-            <!-- <%= fbook %> -->
-        </div>
+
+
+
+<div class="col-sm-8 blog-main">
+
+<div class = "feeds">
+
+  <% @blogs.each do |blog| %>
+    <h2><%= link_to blog["title"], blog["url"], target: "_blank" %></h2>
+    by <%= blog["author"] %> on <%= Date.parse(blog["published"]).strftime("%b %d, %Y") %>
+    <% if blog["content"] %>
+      <%= blog["content"][0 .. 1600].html_safe %>
+      <!-- <%= truncate(blog["content"], length: 1600, separator: ' ').html_safe %> -->
+      <% if blog["content"].length >= 1600 %>
+        ...<br>
+        <%= link_to "Read More!", blog["url"], target: "_blank" %>
+      <% end %>
+    <% else %>
+      <%= blog["summary"][0 .. 1600].html_safe %>
+      <% if blog["summary"].length >= 1600 %>
+        ...<br>
+        <%= link_to "Read More!", blog["url"], target: "_blank" %>
+      <% end %>
+    <% end %><br><br>
+  <% end %>
+
+</div>
+  <br><br><br><br>
+
+  <nav>
+    <ul class="pager">
+      <li><a href="#">Previous</a></li>
+      <li><a href="#">Next</a></li>
+    </ul>
+  </nav>
+
+
+</div><!-- /.blog-main -->
+
+<div class="col-sm-3 col-sm-offset-1 blog-sideblog">
+  <div class="sideblog-module sideblog-module-inset">
+    <h4>About</h4>
+    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+  </div>
+  <div class="sideblog-module">
+
+
+<!-- <%= @facebook.methods %> -->
+
+  <div class="fb">
+    <% @facebook.to_a.each do |fb| %>
+      <% fb.entries.each do |sm| %>
+        <h3><%= link_to sm.last_modified.strftime("%b %d, %Y"), sm.url, target: "_blank" %></h3><br>
+        <p><%= sm.summary.to_s.html_safe %></p><br><br>
       <% end %>
     <% end %>
-
   </div>
-</div>
 
-<!-- ###about to jump into 'picture' as string and delete 130x130 -->
+
+
+    <h4>Archives</h4>
+    <ol class="list-unstyled">
+      <li><a href="#">March 2014</a></li>
+      <li><a href="#">February 2014</a></li>
+      <li><a href="#">January 2014</a></li>
+      <li><a href="#">December 2013</a></li>
+      <li><a href="#">November 2013</a></li>
+      <li><a href="#">October 2013</a></li>
+      <li><a href="#">September 2013</a></li>
+      <li><a href="#">August 2013</a></li>
+      <li><a href="#">July 2013</a></li>
+      <li><a href="#">June 2013</a></li>
+      <li><a href="#">May 2013</a></li>
+      <li><a href="#">April 2013</a></li>
+    </ol>
+  </div>
+  <div class="sideblog-module">
+    <h4>Elsewhere</h4>
+    <ol class="list-unstyled">
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Facebook</a></li>
+    </ol>
+  </div>
+</div><!-- /.blog-sideblog -->

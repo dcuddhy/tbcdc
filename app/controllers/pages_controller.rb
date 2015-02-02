@@ -13,6 +13,57 @@ class PagesController <ApplicationController
 
   def index
 
+
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  uri = URI.parse(encoded_url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request = Net::HTTP::Get.new(uri.request_uri)
+  response = http.request(request)
+  @tbcdc = JSON.parse(response.body)
+
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  uri = URI.parse(encoded_url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request = Net::HTTP::Get.new(uri.request_uri)
+  response = http.request(request)
+  @ami = JSON.parse(response.body)
+
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  uri = URI.parse(encoded_url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request = Net::HTTP::Get.new(uri.request_uri)
+  response = http.request(request)
+  @gafbo = JSON.parse(response.body)
+
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/buildabeard/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  uri = URI.parse(encoded_url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request = Net::HTTP::Get.new(uri.request_uri)
+  response = http.request(request)
+  @bab = JSON.parse(response.body)
+
+  @smedia = []
+
+  @smedia << @tbcdc
+  @smedia << @ami
+  @smedia << @gafbo
+  @smedia << @bab
+
+  end
+
+
+
+
+  def facebook
+
     # @feeds = []
     # @feeds << Feedjira::Feed.fetch_and_parse('https://www.facebook.com/feeds/page.php?format=rss20&id=218130979387')
 
@@ -36,35 +87,6 @@ class PagesController <ApplicationController
     # entries.flatten!
     # @entries = entries.sort_by{|entry| entry.published.utc}.reverse
   end
-
-
-
-#schedule rake tasks - heroku scheduler
-
-
-# Dead??
-    # @feeds << Feedjira::Feed.fetch_and_parse('https://www.kickstarter.com/projects/755494424/beardo-the-movie-a-documentary/posts.atom')
-    # @feeds << Feedjira::Feed.fetch_and_parse('http://mustachesforkids.org/feed/ ')
-    # @feeds << Feedjira::Feed.fetch_and_parse('http://www.m4kvancouver.org/feed/')
-
-
-
-
-  def facebook
-
-  encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=100&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
-  uri = URI.parse(encoded_url)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-  request = Net::HTTP::Get.new(uri.request_uri)
-  response = http.request(request)
-  @facebook = JSON.parse(response.body)
-
-  end
-
-
 
 
 
