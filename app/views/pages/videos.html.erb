@@ -1,5 +1,75 @@
 <div class="videos">
   <% @videos.values.each do |video| %>
+  <% vid = video[0] %>
+      <% vid['caption'] %>
+  <% end %>
+</div>
+
+
+
+<table>
+  <tr>
+    <td>
+      <!-- ### ### ### ### MAIN VIDEO ### ### ### ### -->
+      <div class="videos">
+        <% @videos.values.each do |video| %>
+          <% vid = video[0] %>
+          <div class = "video-frame">
+          <% if vid["source_url"].to_s.length > 31 %>
+            <iframe name="vframe" width="640" height="360"
+              src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
+              frameborder="0" allowfullscreen></iframe>
+            <br>
+          <% else %>
+            <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+              width="640" height="360" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </td>
+    <td>
+    <!-- ### ### ### ### SECONDARY  VIDEO ### ### ### ### -->
+      <% @videos.values.each do |video| %>
+        <% vid = video[0..2] %>
+        <% vid.each do |v| %>
+          <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+              <div class = "video-feat" >
+                <img src="<%= v['thumbnail_url'] %>">
+                <div class = "video-feat-text">
+                  <%= v['caption'].html_safe %>
+                </div>
+              </div>
+          </a>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+    <% @videos.values.each do |video| %>
+        <% vid = video[3..8] %>
+      <% vid.each do |v| %>
+      <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+        <div class = "video-thumb" %>
+          <img src="<%= v['thumbnail_url'] %>">
+        </div>
+      </a>
+      <% end %>
+    <% end %>
+<br><br><br>
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<!-- ### ### ### ### TERTIARY VIDEO ### ### ### ### -->
+<!-- <div class="videos">
+  <% @videos.values.each do |video| %>
     <% video.each do |vid| %>
       <% if vid["source_url"].to_s.length > 31 %>
         <iframe width="640" height="360"
@@ -8,9 +78,9 @@
         <br>
       <% else %>
         <iframe src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
-          width="640" height="360" frameborder="0" 
+          width="640" height="360" frameborder="0"
           webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       <% end %>
     <% end %>
   <% end %>
-</div>
+</div> -->
