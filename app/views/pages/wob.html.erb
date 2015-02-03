@@ -1,13 +1,11 @@
-<br><br>
-
 <div class = "flickr text-center">
   <% @megagram.each do |mega| %>
     <% mega["data"].each do |m| %>
-      <div class="outer-frame">      
-        <div class = "frame">
-            <img src="<%= m["images"]["low_resolution"]["url"] %>"><br>
+        <div class = "wob">
+          <a href="<%= m['link'] %>" target="_blank">
+            <img src="<%= m["images"]["low_resolution"]["url"] %>">
+          </a>
         </div>
-      </div>
     <% end %>
   <% end %>
 </div>

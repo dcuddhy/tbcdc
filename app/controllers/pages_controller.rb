@@ -179,10 +179,6 @@ def wob
   @megagram << @instagram2
   @megagram << @instagram3
   @megagram << @instagram4
-  @megagram << @instagram5
-  @megagram << @instagram6
-  @megagram << @instagram7
-  @megagram << @instagram8
 
 end
 
