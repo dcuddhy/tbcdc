@@ -1,0 +1,76 @@
+
+.pin {
+	display: inline-block;
+	background: #FEFEFE;
+	border: 2px solid #FAFAFA;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 8px;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	opacity: 1;
+	transition: all .2s ease;
+	width: 250px;
+}
+
+.pin h4, .pin .date{
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+.pin {
+  .date{
+    color: #888;
+  }
+}
+
+.pin img {
+	max-width: 80%;
+  margin: 0 auto;
+	margin-bottom: 5px;
+  display: block;
+  border: 1px solid #eee;
+}
+
+.pin .description {
+      background: #f4f4f4;
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+.pin hr{
+  margin: 0;
+}
+
+.pin:hover {
+	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
+	border: 2px solid #fefefe;
+}
+
+.pin:not(:hover) {
+	background: #fafafa;
+}
+
+@media (min-width: 300px) {
+	#columns {
+		column-count: 1;
+	}
+}
+
+@media (min-width: 500px) {
+	#columns {
+		column-count: 2;
+	}
+}
+
+@media (min-width: 800px) {
+	#columns {
+		column-count: 3;
+	}
+}
+
+@media (min-width: 1050px) {
+	#columns {
+		column-count: 4;
+	}
+}

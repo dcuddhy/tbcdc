@@ -1,0 +1,99 @@
+
+.videos{
+  width: 100%;
+  @media (max-width: 1200px) {
+  float: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 680px;
+  }
+}
+
+.video-frame{
+  width: 660px;
+  height: 380px;
+}
+
+
+.video-feat {
+  background: #FEFEFE;
+  float: left;
+  height: 118px;
+  width: 470px;
+  clear: both;
+  top: 0;
+  margin: 8px 10px 8px 10px;
+  @media (max-width: 1200px) {
+  height: 143px;
+  width: 660px;
+  margin: 10px auto;
+  float: center;
+  display: block;
+    }
+}
+
+.video-feat img{
+  margin: -17px 10px 0 0;
+  max-width: 175px;
+  float: left;
+  @media (max-width: 1200px) {
+  margin: -21px 10px 0 0;
+  max-width: 220px;
+    }
+}
+
+.video-feat .video-feat-text{
+  margin-left: 185px;
+  text-align: left;
+}
+
+.video-thumb {
+  background: #FEFEFE;
+  float: left;
+  height: 118px;
+  width: 175px;
+  margin: 10px;
+  overflow: hidden;
+  @media (max-width: 1200px) {
+  width: 206px;
+  height: 136px;
+  }
+}
+
+.video-thumb img{
+  margin: -17px 10px 0 0;
+  background: #FEFEFE;
+  float: left;
+  max-width: 175px;
+  @media (max-width: 1200px) {
+  margin: -20px 10px 0 0;
+  max-width: 208px;
+  }
+}
+
+.video-thumb img:hover, .video-feat img:hover {
+  background: black;
+  opacity: .7;
+}
+
+.video-feat:hover, .video-thumb:hover, .video-frame:hover {
+	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
+}
+
+.left{
+  float: right;
+  display: inline;
+  @media (max-width: 1200px) {
+  margin: 0 auto;
+  float: center;
+  }
+}
+
+.right{
+  float: right;
+  display: inline;
+  @media (max-width: 1200px) {
+  margin: 0 auto;
+  float: center;
+  }
+}
