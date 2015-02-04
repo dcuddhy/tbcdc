@@ -1,17 +1,6 @@
-<div class="videos">
-  <% @videos.values.each do |video| %>
-  <% vid = video[0] %>
-      <% vid['caption'] %>
-  <% end %>
-</div>
-
-
-
-<table>
-  <tr>
-    <td>
-      <!-- ### ### ### ### MAIN VIDEO ### ### ### ### -->
       <div class="videos">
+
+<div class = "left">
         <% @videos.values.each do |video| %>
           <% vid = video[0] %>
           <div class = "video-frame">
@@ -27,26 +16,30 @@
           </div>
           <% end %>
         <% end %>
-      </div>
-    </td>
-    <td>
-    <!-- ### ### ### ### SECONDARY  VIDEO ### ### ### ### -->
-      <% @videos.values.each do |video| %>
-        <% vid = video[0..2] %>
-        <% vid.each do |v| %>
-          <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
-              <div class = "video-feat" >
-                <img src="<%= v['thumbnail_url'] %>">
-                <div class = "video-feat-text">
-                  <%= v['caption'].html_safe %>
-                </div>
-              </div>
-          </a>
-        <% end %>
-      <% end %>
-    </td>
-  </tr>
-</table>
+</div>
+
+
+<div class = "right">
+  <% @videos.values.each do |video| %>
+    <% vid = video[0..2] %>
+    <% vid.each do |v| %>
+      <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+          <div class = "video-feat" >
+            <img src="<%= v['thumbnail_url'] %>">
+            <div class = "video-feat-text">
+              <%= v['caption'].html_safe %>
+            </div>
+          </div>
+      </a>
+    <% end %>
+  <% end %>
+</div>
+
+          </div>
+
+
+
+<div class = "videos">
     <% @videos.values.each do |video| %>
         <% vid = video[3..8] %>
       <% vid.each do |v| %>
@@ -57,13 +50,7 @@
       </a>
       <% end %>
     <% end %>
-<br><br><br>
-
-
-
-
-
-
+</div>
 
 
 <br><br><br><br><br><br>
