@@ -1,3 +1,6 @@
+@import 'color';
+
+
 .flickr{
   width: 100%;
   margin: 0 auto;
@@ -10,7 +13,7 @@
 }
 
 .flickr .wob, .video-frame, .video-feat, .video-thumb{
-  border: 10px solid #FAFAFA;
+  border: 10px solid $whiteSTD;
   overflow: hidden;
   margin: 10px;
   display: inline-block;
@@ -25,7 +28,7 @@
 
 .flickr .wob:hover {
   padding: 16px;
-  border: 0px solid #FEFEFE;
+  border: 0px solid $whiteFLT;
   width: 180px;
   height: 180px;
   overflow: hidden;
@@ -33,7 +36,7 @@
 }
 
 .flickr .frame{
-  border: 5px solid #FAFAFA;
+  border: 5px solid $whiteSTD;
   padding: 6px;
   width: 120px;
   height: 120px;
@@ -45,15 +48,15 @@
   margin: 5px;
   overflow: hidden;
   display: inline-block;
-	border: 2px solid #FAFAFA;
+	border: 2px solid $whiteSTD;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 }
 
 .flickr .frame:hover {
-  border: 5px solid #FEFEFE;
+  border: 5px solid $whiteFLT;
 }
 
 .flickr .outer-frame:hover {
-	border: 2px solid #FEFEFE;
+	border: 2px solid $whiteFLT;
 	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
 }

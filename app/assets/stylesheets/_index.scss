@@ -1,8 +1,9 @@
+@import 'color';
 
 .pin {
 	display: inline-block;
-	background: #FEFEFE;
-	border: 2px solid #FAFAFA;
+	background: $whiteFLT;
+	border: 2px solid $whiteSTD;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 	margin: 8px;
 	column-break-inside: avoid;
@@ -44,11 +45,11 @@
 
 .pin:hover {
 	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
-	border: 2px solid #fefefe;
+	border: 2px solid $whiteFLT;
 }
 
 .pin:not(:hover) {
-	background: #fafafa;
+	background: $whiteSTD;
 }
 
 @media (min-width: 300px) {

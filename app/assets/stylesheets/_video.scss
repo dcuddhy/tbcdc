@@ -1,3 +1,6 @@
+@import 'color';
+
+
 
 .videos{
   width: 100%;
@@ -12,29 +15,36 @@
 .video-frame{
   width: 660px;
   height: 380px;
+  @media (max-width: 1200px) {
+  margin: 0 0 15px 0;
+}
 }
 
 
 .video-feat {
-  background: #FEFEFE;
+  background: $whiteSTD;
   float: left;
   height: 118px;
   width: 470px;
   clear: both;
   top: 0;
-  margin: 8px 10px 8px 10px;
+  margin: 10px 10px 3px 10px;
   @media (max-width: 1200px) {
   height: 143px;
   width: 660px;
-  margin: 10px auto;
+  margin: 0 auto 20px auto;
   float: center;
   display: block;
     }
 }
 
+.video-feat:hover{
+  background: $whiteFLT;
+}
+
 .video-feat img{
   margin: -17px 10px 0 0;
-  max-width: 175px;
+  max-width: 177px;
   float: left;
   @media (max-width: 1200px) {
   margin: -21px 10px 0 0;
@@ -42,41 +52,49 @@
     }
 }
 
+.right{
+  :link, :visited{
+    color: black;
+  }
+  :hover {
+    text-decoration: underline !important;
+  }
+}
+
+
 .video-feat .video-feat-text{
   margin-left: 185px;
   text-align: left;
+  font-size: 1.4em;
 }
 
 .video-thumb {
-  background: #FEFEFE;
+  background: $whiteFLT;
   float: left;
-  height: 118px;
+  height: 112px;
   width: 175px;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
   overflow: hidden;
   @media (max-width: 1200px) {
+  margin: 0 10px 20px 10px;
   width: 206px;
   height: 136px;
   }
 }
 
 .video-thumb img{
-  margin: -17px 10px 0 0;
-  background: #FEFEFE;
+  margin: -19px 0 0 0;
+  background: $whiteFLT;
   float: left;
-  max-width: 175px;
+  max-width: 177px;
   @media (max-width: 1200px) {
   margin: -20px 10px 0 0;
   max-width: 208px;
   }
 }
 
-.video-thumb img:hover, .video-feat img:hover {
-  background: black;
-  opacity: .7;
-}
-
 .video-feat:hover, .video-thumb:hover, .video-frame:hover {
+	border: 10px solid $whiteFLT;
 	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
 }
 

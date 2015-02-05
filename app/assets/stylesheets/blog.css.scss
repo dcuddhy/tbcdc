@@ -225,14 +225,14 @@ body {
 	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
 }
 
-.pin, .video-feat, .video-feat-text {
+.pin{
   a:link, a:visited, a:active {
     color: black;
     text-decoration: none;
   }
 }
 
-.pin, .video-feat .video-feat-text{
+.pin{
   a:hover {
       color: black;
       text-decoration: underline;
