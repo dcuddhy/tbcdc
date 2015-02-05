@@ -5,10 +5,7 @@ gem 'nokogiri'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'feedjira'
-gem 'pry-rails'
 gem 'oauth'
-
-gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'omniauth'
 gem 'omniauth-openid'
@@ -50,6 +47,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'dotenv-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
