@@ -21,7 +21,7 @@ gem "koala", "~> 1.10.0rc" # Facebook API
 gem 'tumblr_client'
 gem 'instagram'
 gem 'fb_graph'
-
+gem 'kaminari' # for pagination
 
 #installed tumblr client on command line
 #installed oauth on command line

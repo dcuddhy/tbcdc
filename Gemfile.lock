@@ -81,6 +81,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.2.0)
+    kaminari (0.16.2)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     koala (1.10.1)
       addressable
       faraday
@@ -221,6 +224,7 @@ DEPENDENCIES
   instagram
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   koala (~> 1.10.0rc)
   nokogiri
   oauth

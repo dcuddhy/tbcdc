@@ -14,7 +14,7 @@ class PagesController <ApplicationController
   def index
 
 
-  encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
   uri = URI.parse(encoded_url)
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
@@ -23,7 +23,7 @@ class PagesController <ApplicationController
   response = http.request(request)
   @tbcdc = JSON.parse(response.body)
 
-  encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
   uri = URI.parse(encoded_url)
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
@@ -32,7 +32,7 @@ class PagesController <ApplicationController
   response = http.request(request)
   @ami = JSON.parse(response.body)
 
-  encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=25&oauth_token=409683005875291|PtioTH0p1hWvRbG2hSZ0BKhDo_k")
+  encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
   uri = URI.parse(encoded_url)
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
@@ -56,6 +56,8 @@ class PagesController <ApplicationController
   @smedia << @ami
   @smedia << @gafbo
   @smedia << @bab
+
+
 
   end
 
@@ -220,5 +222,4 @@ end
 #permanence / temp ~ when to use bangs
 
 #QUESTIONS:
-#Why does Engadget break my titlecase?
 #How do I look back at a commit to compare what I have/had?
