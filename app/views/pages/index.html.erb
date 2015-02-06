@@ -1,9 +1,18 @@
 
 
 
+<% @smedia.each do |facebook| %>
+	<% facebook['data'].each do |fbook| %>
+
+		<% fbook %>
+
+	<% end %>
+<% end %>
+
 
 <div id="wrapper">
 	<div id="columns">
+
 
   <% @smedia.each do |facebook| %>
     <% facebook['data'].each do |fbook| %>
@@ -31,6 +40,5 @@
       <% end %>
     <% end %>
   <% end %>
-
   </div>
 </div>
