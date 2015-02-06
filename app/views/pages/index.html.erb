@@ -1,13 +1,23 @@
+<%= paginate @lunchbox %>
 
-
-
-<% @smedia.each do |facebook| %>
-	<% facebook['data'].each do |fbook| %>
-
-		<% fbook %>
-
-	<% end %>
+<% @lunchbox.each do |fbook| %>
+	<div class = "pin">
+		<%= fbook['from']['name'] %>
+		<%= fbook['created_time'] %>
+	</div>
 <% end %>
+<br><br><br><br>
+
+<%= paginate @sammy %>
+
+<% @sammy.each do |fbook| %>
+	<div class = "pin">
+		<%= fbook['from']['name'] %>
+		<%= fbook['created_time'] %>
+	</div>
+<% end %>
+
+
 
 
 <div id="wrapper">

@@ -15,6 +15,8 @@ class PagesController <ApplicationController
 
   @sando = Facebookapi.new
 
+  @sammy = Kaminari.paginate_array(Facebookapi.new.tbc['data']).page(params[:page]).per(5)
+
 
 
 
@@ -61,6 +63,19 @@ class PagesController <ApplicationController
     @smedia << @ami
     @smedia << @gafbo
     @smedia << @bab
+
+
+
+
+
+
+   @smedia.each do |facebook|
+
+    @bread = facebook['data']
+    @lunchbox = Kaminari.paginate_array(@bread).page(params[:page]).per(10)
+
+    end
+
 
 
   end
