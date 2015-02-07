@@ -1,10 +1,34 @@
+<div id="wrapper">
+	<div id="columns">
 
 
+    <% @foo.each do |fbook| %>
+      <% if fbook['message'] %>
+          <div class = "pin">
+            <h4><a href="https://www.facebook.com/<%= fbook['from']['id'] %>" target="_blank">
+              <%= fbook['from']['name'] %></a></h4>
+              <div class = "date">
+                <%= fbook['created_time'].to_date.strftime("%b %d, %Y") %><br>
+              </div>
+            <% if fbook['picture'] %>
+              <center>
+                <a href="<%= fbook['link'] %>" target="_blank">
+                  <img src = "<%= fbook['picture'] %>">
+                </a>
+              </center>
+            <% end %>
+            <% if fbook['description'] %>
+              <div class = "description">
+              <em><%= fbook['description'] %></em><br>
+              </div>
+            <% end %>
+              <%= fbook['message'] %><br>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
+<center>
 <%= paginate @foo %>
-
-<% @foo.each do |bar| %>
-	<div class = "pin">
-		<%= bar['from']['name'] %>
-	</div>
-<% end %>
+</center>

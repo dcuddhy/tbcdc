@@ -8,7 +8,7 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @tbcdc = JSON.parse(response.body)
+    @tbcdcX = JSON.parse(response.body)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -17,7 +17,7 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @ami = JSON.parse(response.body)
+    @amiX = JSON.parse(response.body)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/buildabeard/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -26,7 +26,7 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @bab = JSON.parse(response.body)
+    @babX = JSON.parse(response.body)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -35,14 +35,14 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @gafbo = JSON.parse(response.body)
+    @gafboX = JSON.parse(response.body)
 
     @smediaX = []
 
-    @smediaX << @tbcdc
-    @smediaX << @ami
-    @smediaX << @gafbo
-    @smediaX << @bab
+    @smediaX << @tbcdcX
+    @smediaX << @amiX
+    @smediaX << @gafboX
+    @smediaX << @babX
 
   end
 

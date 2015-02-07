@@ -83,7 +83,6 @@ class PagesController <ApplicationController
 
 
 
-
   @foo = Kaminari.paginate_array(@smedia).page(params[:page]).per(40)
 
 
