@@ -13,16 +13,7 @@ class PagesController <ApplicationController
 
   def index
 
-  @sando = Facebookapi.new.tbc
-
-
-  @sammy = Kaminari.paginate_array(Facebookapi.new.tbc).page(params[:page]).per(5)
-
-
-
-
-
-
+    @sammy = Kaminari.paginate_array(Facebookapi.new.tbc).page(params[:page]).per(5)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -60,7 +51,6 @@ class PagesController <ApplicationController
     response = http.request(request)
     @bab = JSON.parse(response.body)
 
-
     @smedia = []
 
     @tbcdc['data'].each do |facebook|
@@ -79,17 +69,7 @@ class PagesController <ApplicationController
       @smedia << facebook
     end
 
-
-
-
-
-  @foo = Kaminari.paginate_array(@smedia).page(params[:page]).per(40)
-
-
-
-
-
-
+    @media = Kaminari.paginate_array(@smedia).page(params[:page]).per(40)
 
   end
 
@@ -128,20 +108,8 @@ class PagesController <ApplicationController
 
 def wob
 
-  @flickr = []
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=beard&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=mustache&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=moustache&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=goatee&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=facialhair&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=soulpatch&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=sideburns&lang=en-us&format=rss_200')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/beard')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/mustache')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/facialhair')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/soulpatch')
-  @flickr << Feedjira::Feed.fetch_and_parse('http://widget.websta.me/rss/tag/sideburns')
-
+  # @flickr = []
+  # @flickr << Feedjira::Feed.fetch_and_parse('http://api.flickr.com/services/feeds/photos_public.gne?tags=beard&lang=en-us&format=rss_200')
 
   uri = URI.parse("https://api.instagram.com/v1/tags/mustache/media/recent?access_token=43415997.30a5aa1.d9970cb87c154a77bc5745c030754a80&count=25")
   run = (http = Net::HTTP.new(uri.host, uri.port)
@@ -209,10 +177,23 @@ def wob
 
   @megagram = []
 
-  @megagram << @instagram
-  @megagram << @instagram2
-  @megagram << @instagram3
-  @megagram << @instagram4
+  @instagram['data'].each do |insta|
+    @megagram << insta
+  end
+
+  @instagram2['data'].each do |insta|
+    @megagram << insta
+  end
+
+  @instagram3['data'].each do |insta|
+    @megagram << insta
+  end
+
+  @instagram4['data'].each do |insta|
+    @megagram << insta
+  end
+
+    @wallobeard = Kaminari.paginate_array(@megagram).page(params[:page]).per(50)
 
 end
 

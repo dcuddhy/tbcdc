@@ -1,13 +1,15 @@
 <div class = "flickr text-center">
-  <% @megagram.each do |mega| %>
-    <% mega["data"].each do |m| %>
-        <div class = "wob">
-          <a href="<%= m['link'] %>" target="_blank">
-            <img src="<%= m["images"]["low_resolution"]["url"] %>">
+<% @wallobeard.each do |wob| %>
+  <div class = "wob">
+          <a href="<%= wob['link'] %>" target="_blank">
+            <img src="<%= wob["images"]["low_resolution"]["url"] %>">
           </a>
-        </div>
-    <% end %>
-  <% end %>
+  </div>
+<% end %>
 </div>
+
+<center>
+<%= paginate @wallobeard %>
+</center>
 
 <br><br>
