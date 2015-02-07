@@ -1,54 +1,10 @@
-<%= paginate @lunchbox %>
 
-<% @lunchbox.each do |fbook| %>
+
+
+<%= paginate @foo %>
+
+<% @foo.each do |bar| %>
 	<div class = "pin">
-		<%= fbook['from']['name'] %>
-		<%= fbook['created_time'] %>
+		<%= bar['from']['name'] %>
 	</div>
 <% end %>
-<br><br><br><br>
-
-<%= paginate @sammy %>
-
-<% @sammy.each do |fbook| %>
-	<div class = "pin">
-		<%= fbook['from']['name'] %>
-		<%= fbook['created_time'] %>
-	</div>
-<% end %>
-
-
-
-
-<div id="wrapper">
-	<div id="columns">
-
-
-  <% @smedia.each do |facebook| %>
-    <% facebook['data'].each do |fbook| %>
-      <% if fbook['message'] %>
-          <div class = "pin">
-            <h4><a href="https://www.facebook.com/<%= fbook['from']['id'] %>" target="_blank">
-              <%= fbook['from']['name'] %></a></h4>
-              <div class = "date">
-                <%= fbook['created_time'].to_date.strftime("%b %d, %Y") %><br>
-              </div>
-            <% if fbook['picture'] %>
-              <center>
-                <a href="<%= fbook['link'] %>" target="_blank">
-                  <img src = "<%= fbook['picture'] %>">
-                </a>
-              </center>
-            <% end %>
-            <% if fbook['description'] %>
-              <div class = "description">
-              <em><%= fbook['description'] %></em><br>
-              </div>
-            <% end %>
-              <%= fbook['message'] %><br>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
-  </div>
-</div>

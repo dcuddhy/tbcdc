@@ -13,9 +13,13 @@ class PagesController <ApplicationController
 
   def index
 
-  @sando = Facebookapi.new
+  @sando = Facebookapi.new.tbc
 
-  @sammy = Kaminari.paginate_array(Facebookapi.new.tbc['data']).page(params[:page]).per(5)
+
+  @sammy = Kaminari.paginate_array(Facebookapi.new.tbc).page(params[:page]).per(5)
+
+
+
 
 
 
@@ -59,22 +63,32 @@ class PagesController <ApplicationController
 
     @smedia = []
 
-    @smedia << @tbcdc
-    @smedia << @ami
-    @smedia << @gafbo
-    @smedia << @bab
-
-
-
-
-
-
-   @smedia.each do |facebook|
-
-    @bread = facebook['data']
-    @lunchbox = Kaminari.paginate_array(@bread).page(params[:page]).per(10)
-
+    @tbcdc['data'].each do |facebook|
+      @smedia << facebook
     end
+
+    @ami['data'].each do |facebook|
+      @smedia << facebook
+    end
+
+    @gafbo['data'].each do |facebook|
+      @smedia << facebook
+    end
+
+    @bab['data'].each do |facebook|
+      @smedia << facebook
+    end
+
+
+
+
+
+
+  @foo = Kaminari.paginate_array(@smedia).page(params[:page]).per(40)
+
+
+
+
 
 
 
