@@ -1,57 +1,100 @@
-      <div class="videos">
+<div class="videos">
+<!-- ##look into playing any one particular random video -->
+  <div class = "left">
+    <% @videos.values.each do |video| %>
+      <% vid = video[0] %>
+      <div class = "video-frame">
+      <% if vid["source_url"].to_s.length > 31 %>
+        <iframe name="vframe" width="640" height="360"
+          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
+          frameborder="0" allowfullscreen></iframe>
+        <br>
+      <% else %>
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+          width="640" height="360" frameborder="0"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class = "left">
-        <% @videos.values.each do |video| %>
-          <% vid = video[0] %>
-          <div class = "video-frame">
-          <% if vid["source_url"].to_s.length > 31 %>
-            <iframe name="vframe" width="640" height="360"
-              src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
-              frameborder="0" allowfullscreen></iframe>
-            <br>
-          <% else %>
-            <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
-              width="640" height="360" frameborder="0"
-              webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-          <% end %>
-        <% end %>
+    <div class = "right">
+    <% @videos.values.each do |video| %>
+      <% vid = video[0..8] %>
+      <% vid.each do |v| %>
+            <div class = "moo-cow" >
+        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+              <img src="<%= v['thumbnail_url'] %>">
+              <!-- <div class = "video-feat-text"> -->
+                <p> <%= v['caption'].html_safe %></p>
+              <!-- </div> ### MAY NOT BE NECESSARY - and removing may
+              be huge in future pagination.  changing div properties using
+              css nth effects-->
+            </div>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 
-<div class = "right">
-  <% @videos.values.each do |video| %>
-    <% vid = video[0..2] %>
-    <% vid.each do |v| %>
-      <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
-          <div class = "video-feat" >
-            <img src="<%= v['thumbnail_url'] %>">
-            <div class = "video-feat-text">
-              <p> <%= v['caption'].html_safe %></p>
+<div class="videos">
+<!-- ##look into playing any one particular random video -->
+  <div class = "left">
+    <% @videos.values.each do |video| %>
+      <% vid = video[0] %>
+      <div class = "video-frame">
+      <% if vid["source_url"].to_s.length > 31 %>
+        <iframe name="vframe" width="640" height="360"
+          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
+          frameborder="0" allowfullscreen></iframe>
+        <br>
+      <% else %>
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+          width="640" height="360" frameborder="0"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class = "right">
+    <% @videos.values.each do |video| %>
+      <% vid = video[0..2] %>
+      <% vid.each do |v| %>
+        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+            <div class = "video-feat" >
+              <img src="<%= v['thumbnail_url'] %>">
+              <!-- <div class = "video-feat-text"> -->
+                <p> <%= v['caption'].html_safe %></p>
+              <!-- </div> ### MAY NOT BE NECESSARY - and removing may
+              be huge in future pagination.  changing div properties using
+              css nth effects-->
             </div>
-          </div>
-      </a>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+<div class = "videos">
+  <% @videos.values.each do |video| %>
+      <% vid = video[3..8] %>
+    <% vid.each do |v| %>
+    <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+      <div class = "video-thumb" %>
+        <img src="<%= v['thumbnail_url'] %>">
+        <p> <%= v['caption'].html_safe %></p>
+
+      </div>
+    </a>
     <% end %>
   <% end %>
 </div>
 
-          </div>
-
-
-
-<div class = "videos">
-    <% @videos.values.each do |video| %>
-        <% vid = video[3..8] %>
-      <% vid.each do |v| %>
-      <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
-        <div class = "video-thumb" %>
-          <img src="<%= v['thumbnail_url'] %>">
-        </div>
-      </a>
-      <% end %>
-    <% end %>
-</div>
-
+<%= paginate @foo %>
 
 <br><br><br><br><br><br>
 <!-- ### ### ### ### TERTIARY VIDEO ### ### ### ### -->
