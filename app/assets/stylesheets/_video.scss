@@ -1,13 +1,12 @@
 @import 'color';
 
-.video-frame, .video-feat, .video-thumb, .moo-cow{
+.video-frame, .video-feat, .video-thumb, .video-frame-new{
   border: 10px solid $whiteSTD;
   overflow: hidden;
   margin: 10px;
   display: inline-block;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 }
-
 
 .videos{
   width: 100%;
@@ -25,9 +24,8 @@
   margin: 0 0 -396px 10px;  /* ### this makes the top iframe look good.  remove this to make the bottom iframe look good. */
   @media (max-width: 1200px) {
   margin: 0 0 15px 0;
+  }
 }
-}
-
 
 .video-feat {
   background: $whiteSTD;
@@ -46,11 +44,7 @@
     }
 }
 
-.video-feat:hover{
-  background: $whiteFLT;
-}
-
-.video-feat img, .moo-cow img{
+.video-feat img, .video-frame-new img{
   margin: -17px 10px 0 0;
   max-width: 177px;
   float: left;
@@ -68,7 +62,6 @@
     text-decoration: underline !important;
   }
 }
-
 
 .video-feat .video-feat-text{
   margin-left: 185px;
@@ -101,7 +94,8 @@
   }
 }
 
-.video-feat:hover, .video-thumb:hover, .video-frame:hover {
+.video-feat:hover, .video-thumb:hover, .video-frame:hover, .video-frame-new:hover {
+  background: $whiteFLT;
 	border: 10px solid $whiteFLT;
 	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
 }
@@ -124,9 +118,7 @@
   }
 }
 
-
-
-.moo-cow:nth-of-type(-n+3){
+.video-frame-new:nth-of-type(-n+3){
   background: $whiteSTD;
   float: right;
   height: 118px;
@@ -143,11 +135,11 @@
     }
 }
 
-.moo-cow:nth-of-type(4){
+.video-frame-new:nth-of-type(4){
     clear:both;
 }
 
-.moo-cow:nth-of-type(n+4){
+.video-frame-new:nth-of-type(n+4){
   display:inline;
   background: $whiteFLT;
   float: left;

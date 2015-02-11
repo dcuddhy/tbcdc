@@ -9,7 +9,7 @@
           frameborder="0" allowfullscreen></iframe>
         <br>
       <% else %>
-        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"].to_s[18..50] %>"
           width="640" height="360" frameborder="0"
           webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
@@ -19,8 +19,7 @@
     <div class = "right">
       <% vid = @foo[0..8] %>
       <% vid.each do |v| %>
-          <div class = "moo-cow" >
-          <% if vid[0]['source_url'].to_s.length > 31  %> <!--### Check these strings to find a better way to differentiate sources -->
+          <div class = "video-frame-new" >
             <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
               <img src="<%= v['thumbnail_url'] %>">
               <!-- <div class = "video-feat-text"> -->
@@ -30,17 +29,7 @@
               css nth effects-->
             </a>
           </div>
-          <% else %>
-            <a href="//player.vimeo.com/video/<%= v["source_url"][18..50] %>" target="vframe">
-              <img src="<%= v['thumbnail_url'] %>">
-              <!-- <div class = "video-feat-text"> -->
-              <p> <%= v['caption'].html_safe %></p>
-              <!-- </div> ### MAY NOT BE NECESSARY - and removing may
-              be huge in future pagination.  changing div properties using
-              css nth effects -->
-            </a>
-          </div>
-        <% end %>
+
       <% end %>
   </div>
 
@@ -63,7 +52,7 @@
           frameborder="0" allowfullscreen></iframe>
         <br>
       <% else %>
-        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"].to_s[18..50] %>"
           width="640" height="360" frameborder="0"
           webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
@@ -115,7 +104,7 @@
           frameborder="0" allowfullscreen></iframe>
         <br>
       <% else %>
-        <iframe src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+        <iframe src="//player.vimeo.com/video/<%= vid["source_url"].to_s[18..50] %>"
           width="640" height="360" frameborder="0"
           webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       <% end %>

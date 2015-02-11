@@ -1,87 +1,124 @@
-
-
-
-
-
-<div class="col-sm-8 blog-main">
-
-<div class = "feeds">
-
-  <% @blogs.each do |blog| %>
-    <h2><%= link_to blog["title"], blog["url"], target: "_blank" %></h2>
-    by <%= blog["author"] %> on <%= Date.parse(blog["published"]).strftime("%b %d, %Y") %>
-    <% if blog["content"] %>
-      <%= blog["content"][0 .. 1600].html_safe %>
-      <!-- <%= truncate(blog["content"], length: 1600, separator: ' ').html_safe %> -->
-      <% if blog["content"].length >= 1600 %>
-        ...<br>
-        <%= link_to "Read More!", blog["url"], target: "_blank" %>
+<div class="videos">
+<!-- ##look into playing any one particular random video -->
+  <div class = "left">
+      <% vid = @foo[0] %>
+      <div class = "video-frame">
+      <% if vid["source_url"].to_s.length > 31 %>
+        <iframe name="vframe" width="640" height="360"
+          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
+          frameborder="0" allowfullscreen></iframe>
+        <br>
+      <% else %>
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+          width="640" height="360" frameborder="0"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
       <% end %>
-    <% else %>
-      <%= blog["summary"][0 .. 1600].html_safe %>
-      <% if blog["summary"].length >= 1600 %>
-        ...<br>
-        <%= link_to "Read More!", blog["url"], target: "_blank" %>
+  </div>
+
+    <div class = "right">
+      <% vid = @foo[0..8] %>
+      <% vid.each do |v| %>
+          <div class = "moo-cow" >
+          <% if vid[0]['source_url'].to_s.length > 31  %> <!--### Check these strings to find a better way to differentiate sources -->
+            <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+              <img src="<%= v['thumbnail_url'] %>">
+              <!-- <div class = "video-feat-text"> -->
+              <p> <%= v['caption'].html_safe %></p>
+              <!-- </div> ### MAY NOT BE NECESSARY - and removing may
+              be huge in future pagination.  changing div properties using
+              css nth effects-->
+            </a>
+          </div>
+          <% else %>
+            <a href="//player.vimeo.com/video/<%= v["source_url"][18..50] %>" target="vframe">
+              <img src="<%= v['thumbnail_url'] %>">
+              <!-- <div class = "video-feat-text"> -->
+              <p> <%= v['caption'].html_safe %></p>
+              <!-- </div> ### MAY NOT BE NECESSARY - and removing may
+              be huge in future pagination.  changing div properties using
+              css nth effects -->
+            </a>
+          </div>
+        <% end %>
       <% end %>
-    <% end %><br><br>
-  <% end %>
+  </div>
+
+<!-- ### this vimeo embed works -->
+<!-- <iframe name="vframe" width="640" height="360" src="//player.vimeo.com/video/32092307" frameborder="0" allowfullscreen></iframe> -->
+
+
 
 </div>
-  <br><br><br><br>
-
-  <nav>
-    <ul class="pager">
-      <li><a href="#">Previous</a></li>
-      <li><a href="#">Next</a></li>
-    </ul>
-  </nav>
 
 
-</div><!-- /.blog-main -->
+<!-- <div class="videos"> -->
+<!-- ##look into playing any one particular random video -->
+  <!-- <div class = "left">
+      <% vid = @foo[0] %>
+      <div class = "video-frame">
+      <% if vid["source_url"].to_s.length > 31 %>
+        <iframe name="vframe" width="640" height="360"
+          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
+          frameborder="0" allowfullscreen></iframe>
+        <br>
+      <% else %>
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+          width="640" height="360" frameborder="0"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <% end %>
+  </div> -->
 
-<div class="col-sm-3 col-sm-offset-1 blog-sideblog">
-  <div class="sideblog-module sideblog-module-inset">
-    <h4>About</h4>
-    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-  </div>
-  <div class="sideblog-module">
+  <!-- <div class = "right">
+      <% vid = @foo[0..2] %>
+      <% vid.each do |v| %>
+        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+            <div class = "video-feat" >
+              <img src="<%= v['thumbnail_url'] %>"> -->
+              <!-- <div class = "video-feat-text"> -->
+                <!-- <p> <%= v['caption'].html_safe %></p> -->
+              <!-- </div> ### MAY NOT BE NECESSARY - and removing may
+              be huge in future pagination.  changing div properties using
+              css nth effects-->
+            <!-- </div>
+        </a>
+      <% end %>
+  </div> -->
 
+<!-- </div> -->
 
-<!-- <%= @facebook.methods %> -->
+<!-- <div class = "videos">
+      <% vid = @foo[3..8] %>
+    <% vid.each do |v| %>
+    <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+      <div class = "video-thumb" %>
+        <img src="<%= v['thumbnail_url'] %>">
+        <p> <%= v['caption'].html_safe %></p>
 
-  <div class="fb">
-    <% @facebook.to_a.each do |fb| %>
-      <% fb.entries.each do |sm| %>
-        <h3><%= link_to sm.last_modified.strftime("%b %d, %Y"), sm.url, target: "_blank" %></h3><br>
-        <p><%= sm.summary.to_s.html_safe %></p><br><br>
+      </div>
+    </a>
+    <% end %>
+</div> -->
+
+<center>
+  <%= paginate @foo %>
+</center>
+
+<!-- ### ### ### ### TERTIARY VIDEO ### ### ### ### -->
+<!-- <div class="videos">
+  <% @videos.values.each do |video| %>
+    <% video.each do |vid| %>
+      <% if vid["source_url"].to_s.length > 31 %>
+        <iframe width="640" height="360"
+          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
+          frameborder="0" allowfullscreen></iframe>
+        <br>
+      <% else %>
+        <iframe src="//player.vimeo.com/video/<%= vid["source_url"][18..50] %>"
+          width="640" height="360" frameborder="0"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       <% end %>
     <% end %>
-  </div>
-
-
-
-    <h4>Archives</h4>
-    <ol class="list-unstyled">
-      <li><a href="#">March 2014</a></li>
-      <li><a href="#">February 2014</a></li>
-      <li><a href="#">January 2014</a></li>
-      <li><a href="#">December 2013</a></li>
-      <li><a href="#">November 2013</a></li>
-      <li><a href="#">October 2013</a></li>
-      <li><a href="#">September 2013</a></li>
-      <li><a href="#">August 2013</a></li>
-      <li><a href="#">July 2013</a></li>
-      <li><a href="#">June 2013</a></li>
-      <li><a href="#">May 2013</a></li>
-      <li><a href="#">April 2013</a></li>
-    </ol>
-  </div>
-  <div class="sideblog-module">
-    <h4>Elsewhere</h4>
-    <ol class="list-unstyled">
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Facebook</a></li>
-    </ol>
-  </div>
-</div><!-- /.blog-sideblog -->
+  <% end %>
+</div> -->
