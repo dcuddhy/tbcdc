@@ -1,12 +1,13 @@
 @import 'color';
 
-.video-frame, .video-feat, .video-thumb, .video-frame-new{
+.video-frame, .video-feat, .video-feat-vimeo, .video-thumb, .video-thumb-vimeo{
   border: 10px solid $whiteSTD;
   overflow: hidden;
   margin: 10px;
   display: inline-block;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 }
+
 
 .videos{
   width: 100%;
@@ -21,20 +22,20 @@
 .video-frame{
   width: 660px;
   height: 380px;
-  margin: 0 0 -396px 10px;  /* ### this makes the top iframe look good.  remove this to make the bottom iframe look good. */
+  margin: 0 0 10px 10px;  /* ### this makes the top iframe look good.  remove this to make the bottom iframe look good. */
   @media (max-width: 1200px) {
   margin: 0 0 15px 0;
   }
 }
 
-.video-feat {
+.video-feat, .video-feat-vimeo {
   background: $whiteSTD;
   float: left;
   height: 118px;
   width: 470px;
   clear: both;
   top: 0;
-  margin: 10px 10px 3px 10px;
+  margin: 0 10px 13px 10px;
   @media (max-width: 1200px) {
   height: 143px;
   width: 660px;
@@ -44,8 +45,22 @@
     }
 }
 
-.video-feat img, .video-frame-new img{
+.video-feat:hover, .video-feat-vimeo:hover{
+  background: $whiteFLT;
+}
+
+.video-feat img {
   margin: -17px 10px 0 0;
+  max-width: 177px;
+  float: left;
+  @media (max-width: 1200px) {
+  margin: -21px 10px 0 0;
+  max-width: 220px;
+    }
+}
+
+.video-feat-vimeo img {
+  margin: 0;
   max-width: 177px;
   float: left;
   @media (max-width: 1200px) {
@@ -63,13 +78,14 @@
   }
 }
 
-.video-feat .video-feat-text{
+
+.video-feat .video-feat-text, .video-feat-vimeo .video-feat-text{
   margin-left: 185px;
   text-align: left;
   font-size: 1.4em;
 }
 
-.video-thumb {
+.video-thumb, .video-thumb-vimeo {
   background: $whiteFLT;
   float: left;
   height: 112px;
@@ -94,8 +110,18 @@
   }
 }
 
-.video-feat:hover, .video-thumb:hover, .video-frame:hover, .video-frame-new:hover {
+.video-thumb-vimeo img{
+  margin: 0 0 0 0;
   background: $whiteFLT;
+  float: left;
+  max-width: 185px;
+  @media (max-width: 1200px) {
+  margin: -20px 10px 0 0;
+  max-width: 208px;
+  }
+}
+
+.video-feat:hover, .video-feat-vimeo:hover, .video-thumb:hover,.video-thumb-vimeo:hover, .video-frame:hover {
 	border: 10px solid $whiteFLT;
 	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
 }
@@ -115,41 +141,5 @@
   @media (max-width: 1200px) {
   margin: 0 auto;
   float: center;
-  }
-}
-
-.video-frame-new:nth-of-type(-n+3){
-  background: $whiteSTD;
-  float: right;
-  height: 118px;
-  width: 470px;
-  clear: both;
-  top: 0;
-  margin: 10px 10px 3px 10px;
-  @media (max-width: 1200px) {
-  height: 143px;
-  width: 660px;
-  margin: 0 auto 20px auto;
-  float: center;
-  display: block;
-    }
-}
-
-.video-frame-new:nth-of-type(4){
-    clear:both;
-}
-
-.video-frame-new:nth-of-type(n+4){
-  display:inline;
-  background: $whiteFLT;
-  float: left;
-  height: 112px;
-  width: 175px;
-  margin: 15px 10px 10px 10px;
-  overflow: hidden;
-  @media (max-width: 1200px) {
-  margin: 0 10px 20px 10px;
-  width: 206px;
-  height: 136px;
   }
 }
