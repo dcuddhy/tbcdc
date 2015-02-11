@@ -29,7 +29,7 @@
            </div>
         </a>
       <% else %>
-        <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>" target="vframe">
+        <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>?autoplay=1" target="vframe">
           <div class = "video-feat-vimeo" >
             <img src="<%= v['thumbnail_url'] %>">
             <div class = "video-feat-text">
@@ -54,7 +54,7 @@
         </a>
         <% else %>
           <div class = "video-thumb-vimeo" >
-          <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>" target="vframe">
+          <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>?autoplay=1" target="vframe">
               <img src="<%= v['thumbnail_url'] %>">
           </a>
         </div>
