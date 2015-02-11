@@ -9,6 +9,7 @@
 */
 
 body {
+	background: url(/handmadepaper.png) ;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
 }
@@ -215,11 +216,6 @@ flex-wrap: wrap;
 
 /* found on http://cssdeck.com/labs/css-only-pinterest-style-columns-layout
 from searching for pinterest style css */
-
-body {
-	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
-}
-
 
 
 .pin{
