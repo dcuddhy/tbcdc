@@ -56,7 +56,7 @@ class Facebookapi
       @smediax << facebook
     end
 
-
+    @smediax
 
   end
 

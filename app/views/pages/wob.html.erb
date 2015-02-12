@@ -1,15 +1,19 @@
+<div class = "text-center">
+  Tag your photo #TBCdc!
+</div>
+
 <div class = "flickr text-center">
-<% @wallobeard.each do |wob| %>
-  <div class = "wob">
-          <a href="<%= wob['link'] %>" target="_blank">
-            <img src="<%= wob["images"]["low_resolution"]["url"] %>">
-          </a>
-  </div>
-<% end %>
+  <% @wallobeard.each do |wob| %>
+    <div class = "wob">
+      <a href="<%= wob['link'] %>" target="_blank">
+        <img src="<%= wob["images"]["low_resolution"]["url"] %>">
+      </a>
+    </div>
+  <% end %>
 </div>
 
 <center>
-<%= paginate @wallobeard %>
+  <%= paginate @wallobeard %>
 </center>
 
 <br><br>
