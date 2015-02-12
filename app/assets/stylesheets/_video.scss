@@ -1,7 +1,7 @@
 @import 'color';
 
 .video-frame, .video-feat, .video-feat-vimeo, .video-thumb, .video-thumb-vimeo{
-  border: 10px solid $whiteSTD;
+  border: 10px solid $whiteStandard;
   overflow: hidden;
   margin: 10px;
   display: inline-block;
@@ -29,7 +29,7 @@
 }
 
 .video-feat, .video-feat-vimeo {
-  background: $whiteSTD;
+  background: $whiteStandard;
   float: left;
   height: 118px;
   width: 470px;
@@ -46,7 +46,7 @@
 }
 
 .video-feat:hover, .video-feat-vimeo:hover{
-  background: $whiteFLT;
+  background: $whiteFloat;
 }
 
 .video-feat img {
@@ -86,7 +86,7 @@
 }
 
 .video-thumb, .video-thumb-vimeo {
-  background: $whiteFLT;
+  background: $whiteFloat;
   float: left;
   height: 112px;
   width: 175px;
@@ -101,7 +101,7 @@
 
 .video-thumb img{
   margin: -19px 0 0 0;
-  background: $whiteFLT;
+  background: $whiteFloat;
   float: left;
   max-width: 177px;
   @media (max-width: 1200px) {
@@ -112,7 +112,7 @@
 
 .video-thumb-vimeo img{
   margin: 0 0 0 0;
-  background: $whiteFLT;
+  background: $whiteFloat;
   float: left;
   max-width: 185px;
   @media (max-width: 1200px) {
@@ -122,7 +122,7 @@
 }
 
 .video-feat:hover, .video-feat-vimeo:hover, .video-thumb:hover,.video-thumb-vimeo:hover, .video-frame:hover {
-	border: 10px solid $whiteFLT;
+	border: 10px solid $whiteFloat;
 	box-shadow: 2px 2px 8px rgba(34, 25, 25, 0.2);
 }
 
