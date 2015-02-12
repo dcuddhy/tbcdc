@@ -69,10 +69,9 @@ class PagesController <ApplicationController
       @smedia << facebook
     end
 
-    @media = Kaminari.paginate_array(@smedia).page(params[:page]).per(40)
+    @media = Kaminari.paginate_array(@smedia.sort_by{|fbook| fbook['created_time']}.reverse).page(params[:page]).per(40)
 
   end
-
 
   def wob
 
