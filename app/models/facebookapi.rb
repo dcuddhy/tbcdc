@@ -37,7 +37,6 @@ class Facebookapi
     response = http.request(request)
     @gafbox = JSON.parse(response.body)
 
-
     @smediax = []
 
     @tbcdcx['data'].each do |facebook|
@@ -59,11 +58,5 @@ class Facebookapi
     @smediax
 
   end
-
-
-
-
-
-
 
 end

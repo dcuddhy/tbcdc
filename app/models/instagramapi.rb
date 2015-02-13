@@ -1,4 +1,4 @@
-class Instagramapi
+  class Instagramapi
 
   def get_instagram_posts
     megagram = []
