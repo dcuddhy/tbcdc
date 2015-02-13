@@ -8,7 +8,7 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @tbcdcx = JSON.parse(response.body)
+    @tbcdc = JSON.parse(response.body)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -17,7 +17,7 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @amix = JSON.parse(response.body)
+    @ami = JSON.parse(response.body)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/buildabeard/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -26,7 +26,7 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @babx = JSON.parse(response.body)
+    @bab = JSON.parse(response.body)
 
     encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=25&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
     uri = URI.parse(encoded_url)
@@ -35,27 +35,27 @@ class Facebookapi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    @gafbox = JSON.parse(response.body)
+    @gafbo = JSON.parse(response.body)
 
-    @smediax = []
+    @smedia = []
 
-    @tbcdcx['data'].each do |facebook|
-      @smediax << facebook
+    @tbcdc['data'].each do |facebook|
+      @smedia << facebook
     end
 
-    @amix['data'].each do |facebook|
-      @smediax << facebook
+    @ami['data'].each do |facebook|
+      @smedia << facebook
     end
 
-    @gafbox['data'].each do |facebook|
-      @smediax << facebook
+    @gafbo['data'].each do |facebook|
+      @smedia << facebook
     end
 
-    @babx['data'].each do |facebook|
-      @smediax << facebook
+    @bab['data'].each do |facebook|
+      @smedia << facebook
     end
 
-    @smediax
+    @smedia
 
   end
 

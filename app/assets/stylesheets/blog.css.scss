@@ -9,7 +9,7 @@
 
 body {
 	background: url(/handmadepaper.png) ;
-  font-family: Georgia, "Times New Roman", Times, serif;
+font-family: 'Lobster', cursive;
   color: #555;
 }
 
@@ -20,10 +20,24 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-family: 'Lobster', cursive;
   font-weight: normal;
   color: #333;
 }
+
+  a:link, a:active {
+    color: $blueBanner;
+    text-decoration: none;
+  }
+
+  a:hover {
+		text-decoration: underline;
+  }
+
+  a:visited {
+      color: $blueNav;
+      text-decoration: none;
+  }
 
 /*
 * Override Bootstrap's default container.
@@ -46,7 +60,7 @@ h6, .h6 {
 }
 
 /* Nav links */
-.blog-nav-item {
+.blog-masthead .blog-nav-item {
   position: relative;
   display: inline-block;
   padding: 10px;
@@ -54,18 +68,18 @@ h6, .h6 {
   color: $greyNavText;
 }
 
-.blog-nav-item:hover,
-.blog-nav-item:focus {
+.blog-masthead .blog-nav-item:hover,
+.blog-masthead .blog-nav-item:focus {
   color: $whiteFloat;
   text-decoration: none;
 }
 
 /* Active state gets a caret at the bottom */
-.blog-nav .active {
+.blog-masthead .blog-nav .active {
   color: $whiteFloat;
 }
 
-.blog-nav .active:after {
+.blog-masthead .blog-nav .active:after {
   position: absolute;
   bottom: 0;
   left: 50%;
