@@ -22,47 +22,11 @@
   <div class="container">
     <nav class="blog-nav">
 
-      <% if current_page?('/') %>
-        <a class="blog-nav-item active" href="/">Home</a>
-      <% else %>
-        <a class="blog-nav-item" href="/">Home</a>
-      <% end %>
-
-      <% if current_page?('/about') %>
-        <a class="blog-nav-item active" href="about">About</a>
-      <% else %>
-        <a class="blog-nav-item" href="about">About</a>
-      <% end %>
-
-      <% if current_page?('/blog') %>
-        <a class="blog-nav-item active" href="blog">Blog</a>
-      <% else %>
-        <a class="blog-nav-item" href="blog">Blog</a>
-      <% end %>
-
-      <% if current_page?('/wob') %>
-        <a class="blog-nav-item active" href="wob">Wall of Beard</a>
-      <% else %>
-        <a class="blog-nav-item" href="wob">Wall of Beard</a>
-      <% end %>
-
-      <% if current_page?('/videos') %>
-        <a class="blog-nav-item active" href="videos">Videos</a>
-      <% else %>
-        <a class="blog-nav-item" href="videos">Videos</a>
-      <% end %>
-
-      <% if current_page?('/facebook') %>
-        <a class="blog-nav-item active" href="facebook">Facebook</a>
-      <% else %>
-        <a class="blog-nav-item" href="facebook">Facebook</a>
-      <% end %>
-
-      <% if current_page?('/admin') %>
-      <a class="blog-nav-item active" href="admin">Admin</a>
-      <% else %>
-      <a class="blog-nav-item" href="admin">Admin</a>
-      <% end %>
+      <a class="blog-nav-item <%= 'active' if current_page?('/') %> " href="/">Home</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/about') %> " href="/">About</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/blog') %> " href="/">Blog</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/wob') %> " href="/">Wall of Beard</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/videos') %> " href="/">Videos</a>
 
     </nav>
   </div>
@@ -90,6 +54,9 @@
   <footer class="blog-footer">
     <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
     <p>
+
+      <a href="admin">Admin</a>
+        <br>
       <a href="#">Back to top</a>
     </p>
   </footer>
