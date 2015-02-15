@@ -17,16 +17,16 @@
     <%= stylesheet_link_tag 'application' %>
   </head>
 
-
+<body>
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
 
       <a class="blog-nav-item <%= 'active' if current_page?('/') %> " href="/">Home</a>
-      <a class="blog-nav-item <%= 'active' if current_page?('/about') %> " href="/">About</a>
-      <a class="blog-nav-item <%= 'active' if current_page?('/blog') %> " href="/">Blog</a>
-      <a class="blog-nav-item <%= 'active' if current_page?('/wob') %> " href="/">Wall of Beard</a>
-      <a class="blog-nav-item <%= 'active' if current_page?('/videos') %> " href="/">Videos</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/about') %> " href="/about">About</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/blog') %> " href="/blog">Blog</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/wob') %> " href="/wob">Wall of Beard</a>
+      <a class="blog-nav-item <%= 'active' if current_page?('/videos') %> " href="/videos">Videos</a>
 
     </nav>
   </div>
@@ -36,7 +36,6 @@
 <div class = "header">
   <img src = "TBCdc-logo2nb.svg" height = "125">
 </div>
-<body>
 <link href='http://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
 
 
