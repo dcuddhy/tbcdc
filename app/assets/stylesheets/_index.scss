@@ -52,6 +52,18 @@
 	background: $whiteStandard;
 }
 
+.wrapper {
+	width: 90%;
+	max-width: 1200px;
+	min-width: 300px;
+	margin: 0 auto;
+}
+
+.columns {
+	column-gap: 15px;
+	column-fill: auto;
+}
+
 @media (min-width: 300px) {
 	.columns {
 		column-count: 1;
