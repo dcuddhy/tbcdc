@@ -5,7 +5,7 @@ require 'json'
 class PagesController <ApplicationController
 
   def index
-    @media = Kaminari.paginate_array(Facebookapi.new.tbc.sort_by{|fbook| fbook['created_time']}.reverse).page(params[:page]).per(40)
+    @media = Kaminari.paginate_array(Facebookapi.new.tbc.sort_by{|fbook| fbook['created_time']}.reverse).page(params[:page]).per(60)
   end
 
   def wob
