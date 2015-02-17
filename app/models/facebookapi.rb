@@ -23,17 +23,6 @@ class Facebookapi
       @ami = JSON.parse(response.body)
     end
 
-    bab_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/buildabeard/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
-      uri = URI.parse(encoded_url)
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      request = Net::HTTP::Get.new(uri.request_uri)
-      response = http.request(request)
-      @bab = JSON.parse(response.body)
-    end
-
     gafbo_thread = Thread.new do
       encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
@@ -199,12 +188,43 @@ class Facebookapi
       @gabmc = JSON.parse(response.body)
     end
 
+    brbc_thread = Thread.new do
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/blueridgebeardclub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      uri = URI.parse(encoded_url)
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+      @brbc = JSON.parse(response.body)
+    end
+
+    niagbmc_thread = Thread.new do
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/NiagaraBeardMoustacheClub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      uri = URI.parse(encoded_url)
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+      @niagbmc = JSON.parse(response.body)
+    end
+
+    bsbccali_thread = Thread.new do
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BSBCCali/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      uri = URI.parse(encoded_url)
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+      @bsbccali = JSON.parse(response.body)
+    end
+
     tbcdc_thread.join
-    bab_thread.join
     gafbo_thread.join
     ami_thread.join
     phpabc_thread.join
-
     twhinas_thread.join
     alamobc_thread.join
     tbbc_thread.join
@@ -218,6 +238,9 @@ class Facebookapi
     scakbmc_thread.join
     glasbmc_thread.join
     gabmc_thread.join
+    brbc_thread.join
+    niagbmc_thread.join
+    bsbccali_thread.join
 
     @smedia = []
 
@@ -230,10 +253,6 @@ class Facebookapi
     end
 
     @gafbo['data'].each do |facebook|
-      @smedia << facebook
-    end
-
-    @bab['data'].each do |facebook|
       @smedia << facebook
     end
 
@@ -290,6 +309,18 @@ class Facebookapi
     end
 
     @gabmc['data'].each do |facebook|
+      @smedia << facebook
+    end
+
+    @brbc['data'].each do |facebook|
+      @smedia << facebook
+    end
+
+    @niagbmc['data'].each do |facebook|
+      @smedia << facebook
+    end
+
+    @bsbccali['data'].each do |facebook|
       @smedia << facebook
     end
 
