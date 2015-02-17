@@ -19,6 +19,7 @@ gem 'tumblr_client'
 gem 'instagram'
 gem 'fb_graph'
 gem 'kaminari' # for pagination
+gem 'puma' # for faster Heroku server
 
 #installed tumblr client on command line
 #installed oauth on command line

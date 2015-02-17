@@ -2,7 +2,7 @@ class Facebookapi
 
   def tbc
     tbcdc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheBeardClub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -13,7 +13,7 @@ class Facebookapi
     end
 
     ami_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/AmericanMustacheInstitute/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -24,7 +24,7 @@ class Facebookapi
     end
 
     gafbo_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/GAFBO/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -35,7 +35,7 @@ class Facebookapi
     end
 
     phpabc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/philadelphiabeardclub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/philadelphiabeardclub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -46,7 +46,7 @@ class Facebookapi
     end
 
     twhinas_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheWhiskerinas/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/TheWhiskerinas/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -57,7 +57,7 @@ class Facebookapi
     end
 
     alamobc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/alamobeard.club.1/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/alamobeard.club.1/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -68,7 +68,7 @@ class Facebookapi
     end
 
     tbbc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/thebritishbeardclub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/thebritishbeardclub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -79,7 +79,7 @@ class Facebookapi
     end
 
     rmbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/RMBMC/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/RMBMC/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -90,7 +90,7 @@ class Facebookapi
     end
 
     tenbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BEARDSareCOOL/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BEARDSareCOOL/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -101,7 +101,7 @@ class Facebookapi
     end
 
     okcbc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/OKCBeardClub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/OKCBeardClub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -112,7 +112,7 @@ class Facebookapi
     end
 
     azbc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/CanyonStateBC/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/CanyonStateBC/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -123,7 +123,7 @@ class Facebookapi
     end
 
     readingbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/ReadingBMC/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/ReadingBMC/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -134,7 +134,7 @@ class Facebookapi
     end
 
     pittsbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/SteelCityBeards/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/SteelCityBeards/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -145,7 +145,7 @@ class Facebookapi
     end
 
     jerseybmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/jerseybmc/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/jerseybmc/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -156,7 +156,7 @@ class Facebookapi
     end
 
     scakbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/SCAKBMC/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/SCAKBMC/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -167,7 +167,7 @@ class Facebookapi
     end
 
     glasbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/GlasgowBeardAndMoustacheClub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/GlasgowBeardAndMoustacheClub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -178,7 +178,7 @@ class Facebookapi
     end
 
     gabmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BeardedSinnersGa/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BeardedSinnersGa/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -189,7 +189,7 @@ class Facebookapi
     end
 
     brbc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/blueridgebeardclub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/blueridgebeardclub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -200,7 +200,7 @@ class Facebookapi
     end
 
     niagbmc_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/NiagaraBeardMoustacheClub/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/NiagaraBeardMoustacheClub/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -211,7 +211,7 @@ class Facebookapi
     end
 
     bsbccali_thread = Thread.new do
-      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BSBCCali/posts/?limit=20&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
+      encoded_url = URI.encode("https://graph.facebook.com/v2.2/BSBCCali/posts/?limit=15&oauth_token=#{ENV['FACEBOOK_OAUTH_TOKEN']}")
       uri = URI.parse(encoded_url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
