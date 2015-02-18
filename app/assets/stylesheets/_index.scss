@@ -1,6 +1,7 @@
 @import 'color';
 
 .pin {
+	word-wrap: break-word;
 	display: inline-block;
 	background: $whiteFloat;
 	border: 2px solid $whiteStandard;
@@ -11,7 +12,8 @@
 	padding-bottom: 5px;
 	opacity: 1;
 	transition: all .2s ease;
-	max-width: 250px;
+	max-width: 235px;
+	overflow: hidden;
 }
 
 .pin h4, .pin .date{
@@ -62,6 +64,8 @@
 .columns {
 	column-gap: 15px;
 	column-fill: auto;
+	margin: 0 auto;
+	text-align: center;
 }
 
 @media (min-width: 300px) {
