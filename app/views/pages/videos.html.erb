@@ -1,6 +1,4 @@
-
 <div class="videos">
-<!-- ##look into playing any one particular random video -->
   <div class = "left">
       <% vid = @foo[0] %>
       <div class = "video-frame">
@@ -66,74 +64,6 @@
 
 </div>
 
-
-
-
-
-<!-- ##### THIS WORKS WITH VIMEO  ###### -->
-    <!-- <div class = "right">
-      <% vid = @foo[0..8] %>
-      <% vid.each do |v| %>
-          <div class = "video-frame-new" >
-      <% if v["source_url"].to_s.length > 31 %>
-            <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
-              <img src="<%= v['thumbnail_url'] %>">
-              <div class = "video-feat-text">
-              <p> <%= v['caption'].html_safe %></p>
-              </div>
-            </a>
-      <% else %>
-            <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>" target="vframe">
-              <img src="<%= v['thumbnail_url'] %>">
-              <div class = "video-feat-text">
-              <p> <%= v['caption'].html_safe %></p>
-              </div>
-            </a>
-      <% end %>
-          </div>
-      <% end %>
-    </div>
-
-</div> -->
-
-<!-- <div class="videos"> -->
-<!-- ##look into playing any one particular random video -->
-  <!-- <div class = "left">
-      <% vid = @foo[0] %>
-      <div class = "video-frame">
-      <% if vid["source_url"].to_s.length > 31 %>
-        <iframe name="vframe" width="640" height="360"
-          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
-          frameborder="0" allowfullscreen></iframe>
-        <br>
-      <% else %>
-        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"].to_s[18..50] %>"
-          width="640" height="360" frameborder="0"
-          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-      <% end %>
-  </div> -->
-
-
-
 <center>
   <%= paginate @foo %>
 </center>
-
-<!-- ### ### ### ### TERTIARY VIDEO ### ### ### ### -->
-<!-- <div class="videos">
-  <% @videos.values.each do |video| %>
-    <% video.each do |vid| %>
-      <% if vid["source_url"].to_s.length > 31 %>
-        <iframe width="640" height="360"
-          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
-          frameborder="0" allowfullscreen></iframe>
-        <br>
-      <% else %>
-        <iframe src="//player.vimeo.com/video/<%= vid["source_url"].to_s[18..50] %>"
-          width="640" height="360" frameborder="0"
-          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <% end %>
-    <% end %>
-  <% end %>
-</div> -->

@@ -9,7 +9,7 @@
 
 body {
 	background: url(/handmadepaper.png) ;
-font-family: 'Lobster', cursive;
+	font-family: sans-serif;
   color: #555;
 }
 
@@ -20,7 +20,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0;
-font-family: 'Lobster', cursive;
+	font-family: sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -254,10 +254,10 @@ from searching for pinterest style css */
 }
 
 .pagination{
-    clear: both;
-		width: 200px;
-		margin: 0 auto;
-		text-align: center;
-		align: center;
-		float: center;
+  clear: both;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	align: center;
+	float: center;
 }
