@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>class Feedjira::Feed - Rails Application Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-add_common_feed_element">::add_common_feed_element</a>
+    
+    <li ><a href="#method-c-add_common_feed_elements">::add_common_feed_elements</a>
+    
+    <li ><a href="#method-c-add_common_feed_entry_element">::add_common_feed_entry_element</a>
+    
+    <li ><a href="#method-c-add_common_feed_entry_elements">::add_common_feed_entry_elements</a>
+    
+    <li ><a href="#method-c-add_feed_class">::add_feed_class</a>
+    
+    <li ><a href="#method-c-add_feed_to_multi">::add_feed_to_multi</a>
+    
+    <li ><a href="#method-c-add_url_to_multi">::add_url_to_multi</a>
+    
+    <li ><a href="#method-c-call_on_each_feed_entry">::call_on_each_feed_entry</a>
+    
+    <li ><a href="#method-c-decode_content">::decode_content</a>
+    
+    <li ><a href="#method-c-determine_feed_parser_for_xml">::determine_feed_parser_for_xml</a>
+    
+    <li ><a href="#method-c-etag_from_header">::etag_from_header</a>
+    
+    <li ><a href="#method-c-feed_classes">::feed_classes</a>
+    
+    <li ><a href="#method-c-fetch_and_parse">::fetch_and_parse</a>
+    
+    <li ><a href="#method-c-fetch_raw">::fetch_raw</a>
+    
+    <li ><a href="#method-c-last_modified_from_header">::last_modified_from_header</a>
+    
+    <li ><a href="#method-c-parse">::parse</a>
+    
+    <li ><a href="#method-c-parse_with">::parse_with</a>
+    
+    <li ><a href="#method-c-setup_easy">::setup_easy</a>
+    
+    <li ><a href="#method-c-update">::update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Feedjira::Feed">
+  <h1 id="class-Feedjira::Feed" class="class">
+    class Feedjira::Feed
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="USER_AGENT">USER_AGENT
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-add_common_feed_element" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_common_feed_element</span><span
+            class="method-args">(element_tag, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Makes all registered feeds types look for the passed in element to parse.
+This is actually just a call to element (a SAXMachine call) in the class.</p>
+
+<h3 id="method-c-add_common_feed_element-label-Parameters">Parameters<span><a href="#method-c-add_common_feed_element-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>element_tag&lt;String&gt;
+<dd>
+<p>The element tag</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys are same as with SAXMachine</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="add_common_feed_element-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_common_feed_element</span>(<span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">feed_classes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span>.<span class="ruby-identifier">element</span> <span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-add_common_feed_elements" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_common_feed_elements</span><span
+            class="method-args">(element_tag, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Makes all registered feeds types look for the passed in elements to parse.
+This is actually just a call to elements (a SAXMachine call) in the class.</p>
+
+<h3 id="method-c-add_common_feed_elements-label-Parameters">Parameters<span><a href="#method-c-add_common_feed_elements-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>element_tag&lt;String&gt;
+<dd>
+<p>The element tag</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys are same as with SAXMachine</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="add_common_feed_elements-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_common_feed_elements</span>(<span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">feed_classes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span>.<span class="ruby-identifier">elements</span> <span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-add_common_feed_entry_element" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_common_feed_entry_element</span><span
+            class="method-args">(element_tag, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Makes all registered entry types look for the passed in element to parse.
+This is actually just a call to element (a SAXMachine call) in the class.</p>
+
+<h3 id="method-c-add_common_feed_entry_element-label-Parameters">Parameters<span><a href="#method-c-add_common_feed_entry_element-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>element_tag&lt;String&gt;
+<dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys are same as with SAXMachine</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="add_common_feed_entry_element-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_common_feed_entry_element</span>(<span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">call_on_each_feed_entry</span> <span class="ruby-value">:element</span>, <span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-add_common_feed_entry_elements" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_common_feed_entry_elements</span><span
+            class="method-args">(element_tag, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Makes all registered entry types look for the passed in elements to parse.
+This is actually just a call to element (a SAXMachine call) in the class.</p>
+
+<h3 id="method-c-add_common_feed_entry_elements-label-Parameters">Parameters<span><a href="#method-c-add_common_feed_entry_elements-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>element_tag&lt;String&gt;
+<dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys are same as with SAXMachine</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="add_common_feed_entry_elements-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_common_feed_entry_elements</span>(<span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">call_on_each_feed_entry</span> <span class="ruby-value">:elements</span>, <span class="ruby-identifier">element_tag</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-add_feed_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_feed_class</span><span
+            class="method-args">(klass)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a new feed parsing class that will be used for parsing.</p>
+
+<h3 id="method-c-add_feed_class-label-Parameters">Parameters<span><a href="#method-c-add_feed_class-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>klass&lt;Constant&gt;
+<dd>
+<p>The class/constant that you want to register.</p>
+</dd></dl>
+
+<h3 id="method-c-add_feed_class-label-Returns">Returns<span><a href="#method-c-add_feed_class-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A updated array of feed parser class names.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_feed_class-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_feed_class</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-identifier">feed_classes</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">klass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-add_feed_to_multi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_feed_to_multi</span><span
+            class="method-args">(multi, feed, feed_queue, responses, options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An abstraction for adding a feed by a <a href="Feed.html">Feed</a> object
+to the passed Curb::multi stack.</p>
+
+<h3 id="method-c-add_feed_to_multi-label-Parameters">Parameters<span><a href="#method-c-add_feed_to_multi-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>multi&lt;Curl::Multi&gt;
+<dd>
+<p>The Curl::Multi object that the request should be added too.</p>
+</dd><dt>feed&lt;Feed&gt;
+<dd>
+<p>A feed object that you would like to be fetched.</p>
+</dd><dt>url_queue&lt;Array&gt;
+<dd>
+<p>An array of feed objects that are queued for request.</p>
+</dd><dt>responses&lt;Hash&gt;
+<dd>
+<p>Existing responses that you want the response from the request added to.</p>
+</dd><dt>feeds&lt;String&gt;
+<dd>
+<p>or &lt;Array&gt; A single feed object, or an array of feed objects.</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys for this argument as as followed:</p>
+<ul><li>
+<p>:on_success - Block that gets executed after a successful request.</p>
+</li><li>
+<p>:on_failure - Block that gets executed after a failed request.</p>
+</li><li>
+<p>all parameters defined in <a
+href="Feed.html#method-c-setup_easy">::setup_easy</a></p>
+</li></ul>
+</dd></dl>
+
+<h3 id="method-c-add_feed_to_multi-label-Returns">Returns<span><a href="#method-c-add_feed_to_multi-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The updated Curl::Multi object with the request details added to it&#39;s
+stack.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_feed_to_multi-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 374</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_feed_to_multi</span>(<span class="ruby-identifier">multi</span>, <span class="ruby-identifier">feed</span>, <span class="ruby-identifier">feed_queue</span>, <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">easy</span> = <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Easy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">curl</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">setup_easy</span> <span class="ruby-identifier">curl</span>, <span class="ruby-identifier">options</span>
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-Modified-Since&quot;</span>] = <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">last_modified</span>.<span class="ruby-identifier">httpdate</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">last_modified</span>
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-Modified-Since&quot;</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:if_modified_since</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:if_modified_since</span>] <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">feed</span>.<span class="ruby-identifier">last_modified</span> <span class="ruby-operator">||</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:if_modified_since</span>].<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">last_modified</span>))
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-None-Match&quot;</span>]     = <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">etag</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">etag</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_success</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">updated_feed</span> = <span class="ruby-constant">Feed</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">body_str</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">on_parser_failure</span>(<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>)
+
+        <span class="ruby-identifier">updated_feed</span>.<span class="ruby-identifier">feed_url</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">last_effective_url</span>
+        <span class="ruby-identifier">updated_feed</span>.<span class="ruby-identifier">etag</span> = <span class="ruby-identifier">etag_from_header</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">header_str</span>)
+        <span class="ruby-identifier">updated_feed</span>.<span class="ruby-identifier">last_modified</span> = <span class="ruby-identifier">last_modified_from_header</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">header_str</span>)
+        <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">update_from_feed</span>(<span class="ruby-identifier">updated_feed</span>)
+        <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>] = <span class="ruby-identifier">feed</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_success</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">feed</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:on_success</span>)
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_failure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span> <span class="ruby-comment"># response code 50X</span>
+      <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>] = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span>
+      <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-string">&#39;Server returned a 404&#39;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_redirect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span> <span class="ruby-comment"># response code 30X</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-operator">==</span> <span class="ruby-value">304</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_success</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">feed</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:on_success</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>] = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span>
+        <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-identifier">err</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_complete</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_feed_to_multi</span>(<span class="ruby-identifier">multi</span>, <span class="ruby-identifier">feed_queue</span>.<span class="ruby-identifier">shift</span>, <span class="ruby-identifier">feed_queue</span>, <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">feed_queue</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>] = <span class="ruby-identifier">feed</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">multi</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">easy</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-add_url_to_multi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_url_to_multi</span><span
+            class="method-args">(multi, url, url_queue, responses, options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An abstraction for adding a feed by URL to the passed Curb::multi stack.</p>
+
+<h3 id="method-c-add_url_to_multi-label-Parameters">Parameters<span><a href="#method-c-add_url_to_multi-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>multi&lt;Curl::Multi&gt;
+<dd>
+<p>The Curl::Multi object that the request should be added too.</p>
+</dd><dt>url&lt;String&gt;
+<dd>
+<p>The URL of the feed that you would like to be fetched.</p>
+</dd><dt>url_queue&lt;Array&gt;
+<dd>
+<p>An array of URLs that are queued for request.</p>
+</dd><dt>responses&lt;Hash&gt;
+<dd>
+<p>Existing responses that you want the response from the request added to.</p>
+</dd><dt>feeds&lt;String&gt; or &lt;Array&gt;
+<dd>
+<p>A single feed object, or an array of feed objects.</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys for this argument as as followed:</p>
+<ul><li>
+<p>:on_success - Block that gets executed after a successful request.</p>
+</li><li>
+<p>:on_failure - Block that gets executed after a failed request.</p>
+</li><li>
+<p>all parameters defined in <a
+href="Feed.html#method-c-setup_easy">::setup_easy</a></p>
+</li></ul>
+</dd></dl>
+
+<h3 id="method-c-add_url_to_multi-label-Returns">Returns<span><a href="#method-c-add_url_to_multi-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The updated Curl::Multi object with the request details added to it&#39;s
+stack.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_url_to_multi-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_url_to_multi</span>(<span class="ruby-identifier">multi</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">url_queue</span>, <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">easy</span> = <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Easy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">url</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">curl</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">setup_easy</span> <span class="ruby-identifier">curl</span>, <span class="ruby-identifier">options</span>
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-Modified-Since&quot;</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:if_modified_since</span>].<span class="ruby-identifier">httpdate</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:if_modified_since</span>)
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-None-Match&quot;</span>]     = <span class="ruby-identifier">options</span>[<span class="ruby-value">:if_none_match</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:if_none_match</span>)
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_success</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">decode_content</span>(<span class="ruby-identifier">c</span>)
+      <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">determine_feed_parser_for_xml</span>(<span class="ruby-identifier">xml</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">feed</span> = <span class="ruby-identifier">parse_with</span> <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">xml</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">on_parser_failure</span>(<span class="ruby-identifier">url</span>)
+
+          <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">feed_url</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">last_effective_url</span>
+          <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">etag</span> = <span class="ruby-identifier">etag_from_header</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">header_str</span>)
+          <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">last_modified</span> = <span class="ruby-identifier">last_modified_from_header</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">header_str</span>)
+          <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">url</span>] = <span class="ruby-identifier">feed</span>
+          <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_success</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">feed</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:on_success</span>)
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-string">&quot;Can&#39;t determine a parser&quot;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># trigger on_failure for 404s</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_complete</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_url_to_multi</span>(<span class="ruby-identifier">multi</span>, <span class="ruby-identifier">url_queue</span>.<span class="ruby-identifier">shift</span>, <span class="ruby-identifier">url_queue</span>, <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">url_queue</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">url</span>] = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">url</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_redirect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-operator">==</span> <span class="ruby-value">304</span> <span class="ruby-comment"># it&#39;s not modified. this isn&#39;t an error condition</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_success</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">url</span>, <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:on_success</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_missing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:on_failure</span>)
+        <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-string">&#39;Server returned a 404&#39;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_failure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">url</span>] = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span>
+      <span class="ruby-identifier">call_on_failure</span>(<span class="ruby-identifier">c</span>, <span class="ruby-identifier">err</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:on_failure</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">multi</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">easy</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-call_on_each_feed_entry" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call_on_each_feed_entry</span><span
+            class="method-args">(method, *parameters)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Call a method on all feed entries classes.</p>
+
+<h3 id="method-c-call_on_each_feed_entry-label-Parameters">Parameters<span><a href="#method-c-call_on_each_feed_entry-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>method&lt;Symbol&gt;
+<dd>
+<p>The method name</p>
+</dd><dt>parameters&lt;Array&gt;
+<dd>
+<p>The method parameters</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="call_on_each_feed_entry-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call_on_each_feed_entry</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">parameters</span>)
+  <span class="ruby-identifier">feed_classes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># iterate on the collections defined in the sax collection</span>
+    <span class="ruby-identifier">k</span>.<span class="ruby-identifier">sax_config</span>.<span class="ruby-identifier">collection_elements</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">vl</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment"># vl is a list of CollectionConfig mapped to an attribute name</span>
+      <span class="ruby-comment"># we&#39;ll look for the one set as &#39;entries&#39; and add the new element</span>
+      <span class="ruby-identifier">vl</span>.<span class="ruby-identifier">find_all</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">accessor</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;entries&#39;</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">data_class</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Class</span>)}.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">v</span>.<span class="ruby-identifier">data_class</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">parameters</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-decode_content" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decode_content</span><span
+            class="method-args">(c)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Decodes the XML document if it was compressed.</p>
+
+<h3 id="method-c-decode_content-label-Parameters">Parameters<span><a href="#method-c-decode_content-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>curl_request&lt;Curl::Easy&gt;
+<dd>
+<p>The Curl::Easy response object from the request.</p>
+</dd></dl>
+
+<h3 id="method-c-decode_content-label-Returns">Returns<span><a href="#method-c-decode_content-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A decoded string of XML.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="decode_content-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">decode_content</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">header_str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/Content-Encoding: gzip/i</span>)
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">gz</span> =  <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">body_str</span>))
+      <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">read</span>
+      <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipFile</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+      <span class="ruby-comment"># Maybe this is not gzipped?</span>
+      <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">body_str</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">header_str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/Content-Encoding: deflate/i</span>)
+    <span class="ruby-identifier">xml</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflate</span>.<span class="ruby-identifier">inflate</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">body_str</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">body_str</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">xml</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-determine_feed_parser_for_xml" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">determine_feed_parser_for_xml</span><span
+            class="method-args">(xml)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determines the correct parser class to use for parsing the feed.</p>
+
+<h3 id="method-c-determine_feed_parser_for_xml-label-Parameters">Parameters<span><a href="#method-c-determine_feed_parser_for_xml-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>xml&lt;String&gt;
+<dd>
+<p>The XML that you would like determine the parser for.</p>
+</dd></dl>
+
+<h3 id="method-c-determine_feed_parser_for_xml-label-Returns">Returns<span><a href="#method-c-determine_feed_parser_for_xml-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The class name of the parser that can handle the XML.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="determine_feed_parser_for_xml-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">determine_feed_parser_for_xml</span>(<span class="ruby-identifier">xml</span>)
+  <span class="ruby-identifier">start_of_doc</span> = <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>, <span class="ruby-value">2000</span>)
+  <span class="ruby-identifier">feed_classes</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">able_to_parse?</span>(<span class="ruby-identifier">start_of_doc</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-etag_from_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">etag_from_header</span><span
+            class="method-args">(header)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determines the etag from the request headers.</p>
+
+<h3 id="method-c-etag_from_header-label-Parameters">Parameters<span><a href="#method-c-etag_from_header-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>header&lt;String&gt;
+<dd>
+<p>Raw request header returned from the request</p>
+</dd></dl>
+
+<h3 id="method-c-etag_from_header-label-Returns">Returns<span><a href="#method-c-etag_from_header-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A string of the etag or nil if it cannot be found in the headers.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="etag_from_header-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">etag_from_header</span>(<span class="ruby-identifier">header</span>)
+  <span class="ruby-identifier">header</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/.*ETag:\s(.*)\r/</span>
+  <span class="ruby-node">$1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-feed_classes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">feed_classes</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Provides a list of registered feed parsing classes.</p>
+
+<h3 id="method-c-feed_classes-label-Returns">Returns<span><a href="#method-c-feed_classes-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A array of class names.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="feed_classes-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">feed_classes</span>
+  <span class="ruby-ivar">@feed_classes</span> <span class="ruby-operator">||=</span> [
+    <span class="ruby-constant">Feedjira</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">RSSFeedBurner</span>,
+    <span class="ruby-constant">Feedjira</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">GoogleDocsAtom</span>,
+    <span class="ruby-constant">Feedjira</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">AtomFeedBurner</span>,
+    <span class="ruby-constant">Feedjira</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">Atom</span>,
+    <span class="ruby-constant">Feedjira</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">ITunesRSS</span>,
+    <span class="ruby-constant">Feedjira</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">RSS</span>
+  ]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-fetch_and_parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_and_parse</span><span
+            class="method-args">(urls, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches and returns the parsed XML for each URL provided.</p>
+
+<h3 id="method-c-fetch_and_parse-label-Parameters">Parameters<span><a href="#method-c-fetch_and_parse-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>urls&lt;String&gt; or &lt;Array&gt;
+<dd>
+<p>A single feed URL, or an array of feed URLs.</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys for this argument as as followed:</p>
+</dd></dl>
+<ul><li>
+<p>:user_agent - <a href="../String.html">String</a> that overrides the
+default user agent.</p>
+</li><li>
+<p>:if_modified_since - <a href="../Time.html">Time</a> object representing
+when the feed was last updated.</p>
+</li><li>
+<p>:if_none_match - <a href="../String.html">String</a>, an etag for the
+request that was stored previously.</p>
+</li><li>
+<p>:on_success - Block that gets executed after a successful request.</p>
+</li><li>
+<p>:on_failure - Block that gets executed after a failed request.</p>
+</li></ul>
+
+<h3 id="method-c-fetch_and_parse-label-Returns">Returns<span><a href="#method-c-fetch_and_parse-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A <a href="Feed.html">Feed</a> object if a single URL is passed.</p>
+
+<p>A Hash if multiple URL&#39;s are passed. The key will be the URL, and the
+value the <a href="Feed.html">Feed</a> object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_and_parse-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fetch_and_parse</span>(<span class="ruby-identifier">urls</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">url_queue</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">urls</span>]
+  <span class="ruby-identifier">multi</span> = <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Multi</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">responses</span> = {}
+
+  <span class="ruby-comment"># I broke these down so I would only try to do 30 simultaneously because</span>
+  <span class="ruby-comment"># I was getting weird errors when doing a lot. As one finishes it pops another off the queue.</span>
+  <span class="ruby-identifier">url_queue</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-value">30</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">url</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_url_to_multi</span>(<span class="ruby-identifier">multi</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">url_queue</span>, <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">multi</span>.<span class="ruby-identifier">perform</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">urls</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">responses</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-fetch_raw" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_raw</span><span
+            class="method-args">(urls, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches and returns the raw XML for each URL provided.</p>
+
+<h3 id="method-c-fetch_raw-label-Parameters">Parameters<span><a href="#method-c-fetch_raw-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>urls&lt;String&gt; or &lt;Array&gt;
+<dd>
+<p>A single feed URL, or an array of feed URLs.</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys for this argument as as followed: :if_modified_since - <a
+href="../Time.html">Time</a> object representing when the feed was last
+updated. :if_none_match - <a href="../String.html">String</a> that&#39;s
+normally an etag for the request that was stored previously. :on_success -
+Block that gets executed after a successful request. :on_failure - Block
+that gets executed after a failed request.</p>
+<ul><li>
+<p>all parameters defined in <a
+href="Feed.html#method-c-setup_easy">::setup_easy</a></p>
+</li></ul>
+</dd></dl>
+
+<h3 id="method-c-fetch_raw-label-Returns">Returns<span><a href="#method-c-fetch_raw-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A <a href="../String.html">String</a> of XML if a single URL is passed.</p>
+
+<p>A Hash if multiple URL&#39;s are passed. The key will be the URL, and the
+value the XML.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_raw-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fetch_raw</span>(<span class="ruby-identifier">urls</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">url_queue</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">urls</span>]
+  <span class="ruby-identifier">multi</span> = <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Multi</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">responses</span> = {}
+  <span class="ruby-identifier">url_queue</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">url</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">easy</span> = <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Easy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">url</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">curl</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">setup_easy</span> <span class="ruby-identifier">curl</span>, <span class="ruby-identifier">options</span>
+
+      <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-Modified-Since&quot;</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:if_modified_since</span>].<span class="ruby-identifier">httpdate</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:if_modified_since</span>)
+      <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;If-None-Match&quot;</span>]     = <span class="ruby-identifier">options</span>[<span class="ruby-value">:if_none_match</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:if_none_match</span>)
+
+      <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_success</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">url</span>] = <span class="ruby-identifier">decode_content</span>(<span class="ruby-identifier">c</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">on_complete</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">url</span>] = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">url</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">multi</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">easy</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">multi</span>.<span class="ruby-identifier">perform</span>
+  <span class="ruby-identifier">urls</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">responses</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-last_modified_from_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last_modified_from_header</span><span
+            class="method-args">(header)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determines the last modified date from the request headers.</p>
+
+<h3 id="method-c-last_modified_from_header-label-Parameters">Parameters<span><a href="#method-c-last_modified_from_header-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>header&lt;String&gt;
+<dd>
+<p>Raw request header returned from the request</p>
+</dd></dl>
+
+<h3 id="method-c-last_modified_from_header-label-Returns">Returns<span><a href="#method-c-last_modified_from_header-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A <a href="../Time.html">Time</a> object of the last modified date or nil
+if it cannot be found in the headers.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="last_modified_from_header-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 435</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_modified_from_header</span>(<span class="ruby-identifier">header</span>)
+  <span class="ruby-identifier">header</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/.*Last-Modified:\s(.*)\r/</span>
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse_safely</span>(<span class="ruby-node">$1</span>) <span class="ruby-keyword">if</span> <span class="ruby-node">$1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(xml, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Takes a raw XML feed and attempts to parse it. If no parser is available a
+<a href="NoParserAvailable.html">Feedjira::NoParserAvailable</a> exception
+is raised. You can pass a block to be called when there&#39;s an error
+during the parsing.</p>
+
+<h3 id="method-c-parse-label-Parameters">Parameters<span><a href="#method-c-parse-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>xml&lt;String&gt;
+<dd>
+<p>The XML that you would like parsed.</p>
+</dd></dl>
+
+<h3 id="method-c-parse-label-Returns">Returns<span><a href="#method-c-parse-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>An instance of the determined feed type. By default, one of these:</p>
+<ul><li>
+<p><a href="Parser/RSSFeedBurner.html">Feedjira::Parser::RSSFeedBurner</a></p>
+</li><li>
+<p><a href="Parser/GoogleDocsAtom.html">Feedjira::Parser::GoogleDocsAtom</a></p>
+</li><li>
+<p><a href="Parser/AtomFeedBurner.html">Feedjira::Parser::AtomFeedBurner</a></p>
+</li><li>
+<p><a href="Parser/Atom.html">Feedjira::Parser::Atom</a></p>
+</li><li>
+<p><a href="Parser/ITunesRSS.html">Feedjira::Parser::ITunesRSS</a></p>
+</li><li>
+<p><a href="Parser/RSS.html">Feedjira::Parser::RSS</a></p>
+</li></ul>
+
+<h3 id="method-c-parse-label-Raises">Raises<span><a href="#method-c-parse-label-Raises">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><a href="NoParserAvailable.html">Feedjira::NoParserAvailable</a> : If no
+valid parser classes could be found for the feed.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parser</span> = <span class="ruby-identifier">determine_feed_parser_for_xml</span>(<span class="ruby-identifier">xml</span>)
+    <span class="ruby-identifier">parse_with</span> <span class="ruby-identifier">parser</span>, <span class="ruby-identifier">xml</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoParserAvailable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;No valid parser for XML.&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-parse_with" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_with</span><span
+            class="method-args">(parser, xml, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Passes raw XML and callbacks to a parser.</p>
+
+<h3 id="method-c-parse_with-label-Parameters">Parameters<span><a href="#method-c-parse_with-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>parser&lt;Object&gt;
+<dd>
+<p>The parser to pass arguments to - must respond to</p>
+</dd></dl>
+
+<p>`parse` and should return a <a href="Feed.html">Feed</a> object.</p>
+<dl class="rdoc-list label-list"><dt>xml&lt;String&gt;
+<dd>
+<p>The XML that you would like parsed.</p>
+</dd></dl>
+
+<h3 id="method-c-parse_with-label-Returns">Returns<span><a href="#method-c-parse_with-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>An instance of the parser feed type.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="parse_with-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-identifier">parser</span>, <span class="ruby-identifier">xml</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">xml</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-setup_easy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_easy</span><span
+            class="method-args">(curl, options={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Setup curl from options. Possible parameters:</p>
+<ul><li>
+<p>:user_agent          - overrides the default user agent.</p>
+</li><li>
+<p>:language            - accept language value.</p>
+</li><li>
+<p>:compress            - any value to enable compression</p>
+</li><li>
+<p>:enable_cookies      - boolean</p>
+</li><li>
+<p>:cookiefile          - file to read cookies</p>
+</li><li>
+<p>:cookies             - contents of cookies header</p>
+</li><li>
+<p>:http_authentication - array containing username, then password</p>
+</li><li>
+<p>:proxy_url           - proxy url</p>
+</li><li>
+<p>:proxy_port          - proxy port</p>
+</li><li>
+<p>:max_redirects       - max number of redirections</p>
+</li><li>
+<p>:timeout             - timeout</p>
+</li><li>
+<p>:ssl_verify_host     - boolean</p>
+</li><li>
+<p>:ssl_verify_peer     - boolean</p>
+</li><li>
+<p>:ssl_version         - the ssl version to use, see
+OpenSSL::SSL::SSLContext::METHODS for options</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setup_easy-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">setup_easy</span>(<span class="ruby-identifier">curl</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;Accept-encoding&quot;</span>]   = <span class="ruby-string">&#39;gzip, deflate&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:compress</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;User-Agent&quot;</span>]        = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:user_agent</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">USER_AGENT</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;Accept-Language&quot;</span>]   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:language</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:language</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">enable_cookies</span>               = <span class="ruby-identifier">options</span>[<span class="ruby-value">:enable_cookies</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:enable_cookies</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">cookiefile</span>                   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:cookiefile</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:cookiefile</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">cookies</span>                      = <span class="ruby-identifier">options</span>[<span class="ruby-value">:cookies</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:cookies</span>)
+
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">userpwd</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:http_authentication</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;:&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:http_authentication</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">proxy_url</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:proxy_url</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:proxy_url</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">proxy_port</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:proxy_port</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:proxy_port</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">max_redirects</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_redirects</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_redirects</span>]
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">timeout</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:timeout</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:timeout</span>]
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">ssl_verify_host</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:ssl_verify_host</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:ssl_verify_host</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">ssl_verify_peer</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:ssl_verify_peer</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:ssl_verify_peer</span>)
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">ssl_version</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:ssl_version</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:ssl_version</span>)
+
+  <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">follow_location</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(feeds, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Updates each feed for each <a href="Feed.html">Feed</a> object provided.</p>
+
+<h3 id="method-c-update-label-Parameters">Parameters<span><a href="#method-c-update-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<dl class="rdoc-list label-list"><dt>feeds&lt;Feed&gt; or &lt;Array&gt;
+<dd>
+<p>A single feed object, or an array of feed objects.</p>
+</dd><dt>options&lt;Hash&gt;
+<dd>
+<p>Valid keys for this argument as as followed:</p>
+<ul><li>
+<p>:on_success - Block that gets executed after a successful request.</p>
+</li><li>
+<p>:on_failure - Block that gets executed after a failed request.</p>
+</li><li>
+<p>all parameters defined in <a
+href="Feed.html#method-c-setup_easy">::setup_easy</a></p>
+</li></ul>
+</dd></dl>
+
+<h3 id="method-c-update-label-Returns">Returns<span><a href="#method-c-update-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>A updated <a href="Feed.html">Feed</a> object if a single URL is passed.</p>
+
+<p>A Hash if multiple Feeds are passed. The key will be the URL, and the value
+the updated <a href="Feed.html">Feed</a> object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">feeds</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">feed_queue</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">feeds</span>]
+  <span class="ruby-identifier">multi</span> = <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Multi</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">responses</span> = {}
+
+  <span class="ruby-identifier">feed_queue</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-value">30</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">feed</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_feed_to_multi</span>(<span class="ruby-identifier">multi</span>, <span class="ruby-identifier">feed</span>, <span class="ruby-identifier">feed_queue</span>, <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">multi</span>.<span class="ruby-identifier">perform</span>
+  <span class="ruby-identifier">feeds</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">responses</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

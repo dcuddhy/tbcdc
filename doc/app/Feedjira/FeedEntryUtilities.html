@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>module Feedjira::FeedEntryUtilities - Rails Application Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-id">#id</a>
+    
+    <li ><a href="#method-i-last_modified">#last_modified</a>
+    
+    <li ><a href="#method-i-parse_datetime">#parse_datetime</a>
+    
+    <li ><a href="#method-i-published">#published</a>
+    
+    <li ><a href="#method-i-published-3D">#published=</a>
+    
+    <li ><a href="#method-i-sanitize-21">#sanitize!</a>
+    
+    <li ><a href="#method-i-updated-3D">#updated=</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Feedjira::FeedEntryUtilities">
+  <h1 id="module-Feedjira::FeedEntryUtilities" class="module">
+    module Feedjira::FeedEntryUtilities
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(field)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">field</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{field.to_s}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(field, value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">field</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{field.to_s}&quot;</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |field.sub('@', ''), instance_variable_get| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-ivar">@rss_fields</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variables</span>
+
+  <span class="ruby-ivar">@rss_fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;@&#39;</span>, <span class="ruby-string">&#39;&#39;</span>), <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">field</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the id of the entry or its url if not id is present, as some
+formats don&#39;t support it</p>
+          
+          
+
+          
+          <div class="method-source-code" id="id-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-ivar">@entry_id</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@url</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-last_modified" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">last_modified</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="FeedEntryUtilities.html#method-i-published">published</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-parse_datetime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_datetime</span><span
+            class="method-args">(string)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_datetime-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_datetime</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>).<span class="ruby-identifier">feed_utils_to_gm_time</span>
+  <span class="ruby-keyword">rescue</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Failed to parse date #{string.inspect}&quot;</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-published" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">published</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="published-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">published</span>
+  <span class="ruby-ivar">@published</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@updated</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="FeedEntryUtilities.html#method-i-last_modified">last_modified</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-published-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">published=</span><span
+            class="method-args">(val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Writer for published. By default, we keep the “oldest” publish time found.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="published-3D-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">published=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">parsed</span> = <span class="ruby-identifier">parse_datetime</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@published</span> = <span class="ruby-identifier">parsed</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@published</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">parsed</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@published</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sanitize-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sanitize!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sanitize-21-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sanitize!</span>
+  <span class="ruby-node">%w[title author summary content image]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:sanitize!</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">send</span> <span class="ruby-value">:sanitize!</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-updated-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">updated=</span><span
+            class="method-args">(val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Writer for updated. By default, we keep the most recent update time found.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="updated-3D-source">
+            <pre><span class="ruby-comment"># File lib/feedjira/feed_entry_utilities.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">updated=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">parsed</span> = <span class="ruby-identifier">parse_datetime</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@updated</span> = <span class="ruby-identifier">parsed</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@updated</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">parsed</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@updated</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
