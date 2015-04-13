@@ -2,11 +2,9 @@ Rails.application.routes.draw do
 
   root "pages#index"
   get "/about" => "pages#about", as: :about
-  get "/blog" => "pages#blog", as: :blog
   get "/admin" => "pages#admin", as: :admin
   get "/wob" => "pages#wob", as: :wob
   get "/videos" => "pages#videos", as: :videos
-  get "/facebook" => "pages#facebook"
 
 
 
