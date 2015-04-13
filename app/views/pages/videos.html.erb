@@ -1,6 +1,6 @@
 <div class="videos">
   <div class = "left">
-      <% vid = @foo[0] %>
+      <% vid = @paginated_videos[0] %>
       <div class = "video-frame">
       <% if vid["source_url"].to_s.length > 31 %>
         <iframe name="vframe" width="640" height="360"
@@ -16,7 +16,7 @@
   </div>
 
   <div class = "right">
-    <% vid = @foo[0..2] %>
+    <% vid = @paginated_videos[0..2] %>
     <% vid.each do |v| %>
       <% if v["source_url"].to_s.length > 31 %>
         <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
@@ -41,8 +41,8 @@
   </div>
 
   <div class = "videos">
-    <% if @foo[3..8] %>
-      <% vid = @foo[3..8] %>
+    <% if @paginated_videos[3..8] %>
+      <% vid = @paginated_videos[3..8] %>
       <% vid.each do |v| %>
       <% if v["source_url"].to_s.length > 31 %>
 
@@ -65,5 +65,5 @@
 </div>
 
 <center>
-  <%= paginate @foo %>
+  <%= paginate @paginated_videos %>
 </center>

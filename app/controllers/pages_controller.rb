@@ -16,7 +16,7 @@ class PagesController <ApplicationController
   def videos
     @videos = Tumblrapi.new.get_tumblr_posts
     @videos.values.each do |video|
-      @foo = Kaminari.paginate_array(video).page(params[:page]).per(9)
+      @paginated_videos = Kaminari.paginate_array(video).page(params[:page]).per(9)
     end
   end
 
