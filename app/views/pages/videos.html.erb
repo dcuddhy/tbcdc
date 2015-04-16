@@ -2,15 +2,17 @@
   <div class = "left">
       <% vid = @paginated_videos[0] %>
       <div class = "video-frame">
-      <% if vid["source_url"].to_s.length > 31 %>
+      <% if vid["source_url"].to_s.include? "youtube" %>
         <iframe name="vframe" width="640" height="360"
-          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s[32..60] %>"
-          frameborder="0" allowfullscreen></iframe>
+          src="https://www.youtube.com/embed/<%= vid["source_url"].to_s.split("=")[1] %>"
+          frameborder="0" allowfullscreen>
+        </iframe>
         <br>
       <% else %>
-        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"].to_s[18..50] %>"
+        <iframe name="vframe" src="//player.vimeo.com/video/<%= vid["source_url"].to_s.split("m/")[1] %>"
           width="640" height="360" frameborder="0"
-          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          webkitallowfullscreen mozallowfullscreen allowfullscreen>
+        </iframe>
       </div>
       <% end %>
   </div>
@@ -18,8 +20,8 @@
   <div class = "right">
     <% vid = @paginated_videos[0..2] %>
     <% vid.each do |v| %>
-      <% if v["source_url"].to_s.length > 31 %>
-        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+      <% if v["source_url"].to_s.include? "youtube" %>
+        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s.split("=")[1] %>?autoplay=1" target="vframe">
           <div class = "video-feat" >
             <img src="<%= v['thumbnail_url'] %>">
             <div class = "video-feat-text">
@@ -28,7 +30,7 @@
            </div>
         </a>
       <% else %>
-        <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>?autoplay=1" target="vframe">
+        <a href="//player.vimeo.com/video/<%= v["source_url"].to_s.split("m/")[1] %>?autoplay=1" target="vframe">
           <div class = "video-feat-vimeo" >
             <img src="<%= v['thumbnail_url'] %>">
             <div class = "video-feat-text">
@@ -44,16 +46,15 @@
     <% if @paginated_videos[3..8] %>
       <% vid = @paginated_videos[3..8] %>
       <% vid.each do |v| %>
-      <% if v["source_url"].to_s.length > 31 %>
-
-        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s[32..60] %>?autoplay=1" target="vframe">
+      <% if v["source_url"].to_s.include? "youtube" %>
+        <a href="https://www.youtube.com/embed/<%= v["source_url"].to_s.split("=")[1] %>?autoplay=1" target="vframe">
           <div class = "video-thumb" %>
             <img src="<%= v['thumbnail_url'] %>">
           </div>
         </a>
         <% else %>
           <div class = "video-thumb-vimeo" >
-          <a href="//player.vimeo.com/video/<%= v["source_url"].to_s[18..50] %>?autoplay=1" target="vframe">
+          <a href="//player.vimeo.com/video/<%= v["source_url"].to_s.split("m/")[1] %>?autoplay=1" target="vframe">
               <img src="<%= v['thumbnail_url'] %>">
           </a>
         </div>
