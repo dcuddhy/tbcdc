@@ -55,6 +55,7 @@
 }
 
 .wrapper {
+	clear: both;
 	width: 90%;
 	max-width: 1200px;
 	min-width: 300px;
@@ -63,7 +64,6 @@
 
 .columns {
 	column-gap: 15px;
-	column-fill: auto;
 	margin: 0 auto;
 	text-align: center;
 }

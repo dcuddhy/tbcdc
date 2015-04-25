@@ -124,12 +124,20 @@ h6, .h6 {
 	margin: 0 0 20px 0;
 }
 
+
 .header-bar{
 	background-color: $blueBanner;
 	width: 100%;
 	float: left;
 	margin-top: 77px;
 	height: 38px;
+}
+
+@-moz-document url-prefix() {
+.header-bar {
+/* 		margin: 0 0 600px 0;
+ */		margin-bottom: 20px;
+  }
 }
 
 /*
